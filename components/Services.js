@@ -1,15 +1,18 @@
 'use client'
+import { useRouter } from 'next/navigation'
 
 const services = [
-  { title: "Construction d'immeubles", desc: "Conception et réalisation de bâtiments résidentiels et commerciaux aux standards internationaux.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> },
-  { title: "Vente d'appartements", desc: "Des appartements modernes et fonctionnels adaptés à tous les profils et budgets.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg> },
-  { title: "Vente de terrains", desc: "Un large portefeuille de terrains viabilisés dans les zones les plus prisées du Sénégal.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> },
-  { title: "Lotissement", desc: "Aménagement et viabilisation de terrains en lots constructibles selon les normes urbanistiques.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> },
-  { title: "Recherche de financement", desc: "Montage de dossiers et mise en relation avec les partenaires bancaires les mieux adaptés.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> },
-  { title: "Encadrement fiscal", desc: "Accompagnement fiscal et juridique pour sécuriser et optimiser vos investissements.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> },
+  { title: "Construction d'immeubles", href: '/services#service-1', desc: "Conception et réalisation de bâtiments résidentiels et commerciaux aux standards internationaux.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> },
+  { title: "Vente d'appartements", href: '/services#service-2', desc: "Des appartements modernes et fonctionnels adaptés à tous les profils et budgets.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg> },
+  { title: "Vente de terrains", href: '/services#service-3', desc: "Un large portefeuille de terrains viabilisés dans les zones les plus prisées du Sénégal.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> },
+  { title: "Lotissement", href: '/services#service-4', desc: "Aménagement et viabilisation de terrains en lots constructibles selon les normes urbanistiques.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> },
+  { title: "Recherche de financement", href: '/services#service-5', desc: "Montage de dossiers et mise en relation avec les partenaires bancaires les mieux adaptés.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> },
+  { title: "Encadrement fiscal", href: '/services#service-6', desc: "Accompagnement fiscal et juridique pour sécuriser et optimiser vos investissements.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> },
 ]
 
 export default function Services() {
+  const router = useRouter()
+
   return (
     <section style={{padding:'5rem 3rem',position:'relative',overflow:'hidden',background:'#fdf1f0'}}>
 
@@ -29,6 +32,7 @@ export default function Services() {
         <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'1.5rem',maxWidth:'960px',margin:'0 auto'}}>
           {services.map((s,i)=>(
             <div key={i} style={{marginTop:'1.5rem'}}
+              onClick={()=>router.push(s.href)}
               onMouseEnter={e=>{
                 e.currentTarget.querySelector('.ci').style.background='rgba(255,255,255,0.2)'
                 e.currentTarget.querySelector('.ci').style.borderColor='rgba(255,255,255,0.3)'
@@ -67,7 +71,6 @@ export default function Services() {
                 boxShadow:'0 8px 30px rgba(192,57,43,0.08), 0 2px 8px rgba(0,0,0,0.04)',
                 textAlign:'center',
               }}>
-                {/* Icône centrée en haut */}
                 <div className="ci" style={{
                   width:'64px',
                   height:'64px',
@@ -83,7 +86,6 @@ export default function Services() {
                 }}>
                   {s.icon}
                 </div>
-
                 <h3 className="ct" style={{
                   fontSize:'15px',
                   fontWeight:'700',
@@ -93,7 +95,6 @@ export default function Services() {
                   marginBottom:'12px',
                   transition:'color 0.35s',
                 }}>{s.title}</h3>
-
                 <p className="cd" style={{
                   fontSize:'13px',
                   color:'#888',
@@ -101,7 +102,6 @@ export default function Services() {
                   marginBottom:'1.5rem',
                   transition:'color 0.35s',
                 }}>{s.desc}</p>
-
                 <span className="cb" style={{
                   display:'inline-block',
                   border:'1px solid #e0b0ad',

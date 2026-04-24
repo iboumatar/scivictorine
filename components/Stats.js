@@ -3,9 +3,8 @@ import { useState, useEffect, useRef } from 'react'
 
 const stats = [
   { num: 30, suffix: '+', label: "Années d'expérience" },
-  { num: 120, suffix: '+', label: 'Projets réalisés' },
-  { num: 200, suffix: '+', label: 'Clients satisfaits' },
-  { num: 10, suffix: '+', label: 'Villes couvertes' },
+  { num: 100, suffix: '%', label: 'Clients satisfaits' },
+  {num: 100, suffix: '%', label: 'Projets livrés dans les délais'},
 ]
 
 function Counter({ target, suffix }) {
@@ -48,7 +47,7 @@ function Counter({ target, suffix }) {
 
 export default function Stats() {
   return (
-    <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',background:'#c0392b'}}>
+    <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',background:'#c0392b'}}>
       {stats.map((s,i)=>(
         <div key={i} style={{padding:'2rem',textAlign:'center',borderRight:i < stats.length-1 ? '1px solid rgba(255,255,255,0.15)' : 'none'}}>
           <Counter target={s.num} suffix={s.suffix} />

@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation' 
 
 const photos = [
   '/images/projet/principale.jpg',
@@ -20,6 +21,8 @@ const photos = [
 export default function ProjectFeature() {
   const [lightbox, setLightbox] = useState(null)
   const [showVideo, setShowVideo] = useState(false)
+  const router = useRouter()
+
   const whatsappLink = `https://wa.me/+33612345678?text=${encodeURIComponent("Bonjour, je suis intéressé par la Résidence Victorine.")}`
 
   const prev = () => setLightbox(l => (l - 1 + photos.length) % photos.length)
@@ -110,8 +113,11 @@ export default function ProjectFeature() {
                 width="100%" height="150" style={{border:0,display:'block'}} allowFullScreen="" loading="lazy"/>
             </div>
             <div style={{display:'flex',gap:'8px'}}>
-              <button style={{flex:1,background:'#c0392b',color:'#fff',border:'none',padding:'14px',fontSize:'10px',letterSpacing:'2px',textTransform:'uppercase',cursor:'pointer'}}>Demander une visite</button>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer"
+            <button
+  onClick={()=>router.push('/contact')}
+  style={{flex:1,background:'#c0392b',color:'#fff',border:'none',padding:'14px',fontSize:'10px',letterSpacing:'2px',textTransform:'uppercase',cursor:'pointer'}}>
+  Demander une visite
+</button>              <a href={whatsappLink} target="_blank" rel="noopener noreferrer"
                 style={{flex:1,background:'#25D366',color:'#fff',padding:'14px',fontSize:'10px',letterSpacing:'2px',textTransform:'uppercase',textDecoration:'none',display:'flex',alignItems:'center',justifyContent:'center',gap:'6px'}}>
                 💬 WhatsApp
               </a>
