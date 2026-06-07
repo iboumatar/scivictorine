@@ -1,6 +1,7 @@
 'use client'
+
 import { useState } from 'react'
-import { useRouter } from 'next/navigation' 
+import { useRouter } from 'next/navigation'
 
 const photos = [
   '/images/projet/principale.jpg',
@@ -23,140 +24,663 @@ export default function ProjectFeature() {
   const [showVideo, setShowVideo] = useState(false)
   const router = useRouter()
 
-  const whatsappLink = `https://wa.me/+33612345678?text=${encodeURIComponent("Bonjour, je suis intéressé par la Résidence Victorine.")}`
+  const whatsappLink = `https://wa.me/+33612345678?text=${encodeURIComponent(
+    'Bonjour, je suis intéressé par la Résidence Victorine.'
+  )}`
 
   const prev = () => setLightbox(l => (l - 1 + photos.length) % photos.length)
   const next = () => setLightbox(l => (l + 1) % photos.length)
 
-  return (
-    <section style={{padding:'5rem 3rem',background:'#fff',borderTop:'1px solid #eee'}}>
-      <div style={{maxWidth:'1100px',margin:'0 auto'}}>
+  const stats = [
+    { label: 'Superficie', value: '150', unit: 'm²' },
+    { label: 'Appartements', value: '7', unit: 'unités' },
+    { label: 'Étages', value: 'R+7', unit: '' },
+    { label: 'Livraison', value: '2025', unit: 'T1' },
+    { label: 'Prix à partir de', value: '200M', unit: 'FCFA' },
+    { label: 'Disponibles', value: '1', unit: 'restant' },
+  ]
 
-        {/* Header */}
-        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:'2rem',flexWrap:'wrap',gap:'1rem'}}>
+  return (
+    <section className="project-section">
+      <div className="bg-shape shape-one" />
+      <div className="bg-shape shape-two" />
+
+      <div className="container">
+        <div className="header">
           <div>
-            <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'8px'}}>À la une</div>
-            <h2 style={{fontSize:'28px',fontWeight:'400',color:'#1a1a1a',letterSpacing:'2px'}}>Projet Vedette</h2>
-            <div style={{width:'40px',height:'2px',background:'#c0392b',marginTop:'14px'}}/>
+            <span className="eyebrow">À la une</span>
+            <h2>Projet Vedette</h2>
           </div>
-          <span style={{display:'inline-block',background:'#c0392b',color:'#fff',fontSize:'9px',letterSpacing:'3px',textTransform:'uppercase',padding:'8px 18px'}}>
-            En cours de commercialisation
-          </span>
+
+          <div className="status">En cours de commercialisation</div>
         </div>
 
-        {/* Layout principal */}
-        <div style={{display:'grid',gridTemplateColumns:'1.3fr 0.7fr',gap:'2rem',alignItems:'start'}}>
+        <div className="project-card">
+          <div className="gallery">
+            <div className="main-image" onClick={() => setLightbox(0)}>
+              <img src={photos[0]} alt="Résidence Victorine" />
 
-          {/* Gauche — galerie */}
-          <div>
-            {/* Photo principale avec bouton vidéo */}
-            <div style={{position:'relative',overflow:'hidden',marginBottom:'4px',cursor:'pointer'}} onClick={()=>setLightbox(0)}>
-              <img src={photos[0]} alt="principale" style={{width:'100%',height:'420px',objectFit:'cover',display:'block',transition:'transform 0.4s'}}
-                onMouseEnter={e=>e.currentTarget.style.transform='scale(1.02)'}
-                onMouseLeave={e=>e.currentTarget.style.transform='scale(1)'}
-              />
-              <div style={{position:'absolute',inset:0,background:'rgba(0,0,0,0.15)'}}/>
-              <div onClick={e=>{e.stopPropagation();setShowVideo(true)}}
-                style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',zIndex:2,display:'flex',flexDirection:'column',alignItems:'center',gap:'8px',cursor:'pointer'}}>
-                <div style={{width:'60px',height:'60px',borderRadius:'50%',background:'rgba(192,57,43,0.9)',display:'flex',alignItems:'center',justifyContent:'center',border:'3px solid rgba(255,255,255,0.4)',transition:'transform 0.2s'}}
-                  onMouseEnter={e=>e.currentTarget.style.transform='scale(1.1)'}
-                  onMouseLeave={e=>e.currentTarget.style.transform='scale(1)'}>
-                  <span style={{color:'#fff',fontSize:'20px',marginLeft:'3px'}}>▶</span>
-                </div>
-                <span style={{fontSize:'9px',color:'rgba(255,255,255,0.9)',letterSpacing:'3px',textTransform:'uppercase',background:'rgba(0,0,0,0.4)',padding:'3px 10px'}}>Voir la vidéo</span>
+              <div className="image-overlay" />
+
+              <button
+                className="video-button"
+                onClick={e => {
+                  e.stopPropagation()
+                  setShowVideo(true)
+                }}
+              >
+                <span className="play">▶</span>
+                <span>Voir la vidéo</span>
+              </button>
+
+              <div className="project-label">
+                Résidence Victorine
               </div>
             </div>
 
-            {/* Miniatures */}
-            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'4px'}}>
-            {photos.slice(1, 4).map((p,i)=>( 
-                <div key={i} style={{position:'relative',overflow:'hidden',cursor:'pointer'}} onClick={()=>setLightbox(i+1)}>
-                  <img src={p} alt={`photo ${i+2}`} style={{width:'100%',height:'110px',objectFit:'cover',display:'block',transition:'transform 0.3s'}}
-                    onMouseEnter={e=>e.currentTarget.style.transform='scale(1.06)'}
-                    onMouseLeave={e=>e.currentTarget.style.transform='scale(1)'}
-                  />
-                  {i === 2 && (
-                    <div style={{position:'absolute',inset:0,background:'rgba(0,0,0,0.55)',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:'4px'}}>
-                      <span style={{fontSize:'24px',color:'#fff',fontWeight:'300'}}>+9</span>
-                      <span style={{fontSize:'9px',color:'rgba(255,255,255,0.85)',letterSpacing:'2px',textTransform:'uppercase'}}>Voir toutes les photos</span>
+            <div className="thumbs">
+              {photos.slice(1, 4).map((photo, index) => (
+                <button
+                  key={index}
+                  className="thumb"
+                  onClick={() => setLightbox(index + 1)}
+                >
+                  <img src={photo} alt={`Photo ${index + 2}`} />
+
+                  {index === 2 && (
+                    <div className="more">
+                      <strong>+9</strong>
+                      <span>Voir toutes les photos</span>
                     </div>
                   )}
-                </div>
+                </button>
               ))}
             </div>
           </div>
 
-          {/* Droite — infos */}
-          <div style={{position:'sticky',top:'2rem'}}>
-            <div style={{fontSize:'24px',fontWeight:'400',color:'#1a1a1a',letterSpacing:'2px',marginBottom:'6px'}}>Résidence Victorine</div>
-            <div style={{fontSize:'11px',color:'#c0392b',letterSpacing:'2px',textTransform:'uppercase',marginBottom:'1.2rem'}}>📍 Stèle Mermoz, Dakar — Sénégal</div>
-            <div style={{fontSize:'13px',color:'#777',lineHeight:'1.9',marginBottom:'1.5rem',borderLeft:'2px solid #e0b0ad',paddingLeft:'1rem'}}>
-              Un immeuble résidentiel haut de gamme offrant des appartements spacieux avec finitions premium et prestations de standing.
+          <aside className="info-card">
+            <div className="info-top">
+              <span className="tag">Haut standing</span>
+              <h3>Résidence Victorine</h3>
+              <p className="location">📍 Stèle Mermoz, Dakar — Sénégal</p>
             </div>
-            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'1px',background:'#eee',border:'1px solid #eee',marginBottom:'1.5rem'}}>
-              {[
-                {label:'Superficie',value:'150',unit:'m²'},
-                {label:'Appartements',value:'7',unit:'unités'},
-                {label:'Étages',value:'R+7',unit:''},
-                {label:'Livraison',value:'2025',unit:'T1'},
-                {label:'Prix à partir de',value:'200M',unit:'FCFA'},
-                {label:'Disponibles',value:'1',unit:'restants'},
-              ].map((s,i)=>(
-                <div key={i} style={{background:'#f9f9f9',padding:'0.9rem 1rem'}}>
-                  <div style={{fontSize:'8px',color:'#aaa',letterSpacing:'2px',textTransform:'uppercase',marginBottom:'4px'}}>{s.label}</div>
-                  <div style={{fontSize:'16px',fontWeight:'500',color:'#1a1a1a'}}>{s.value} <span style={{fontSize:'10px',color:'#c0392b'}}>{s.unit}</span></div>
+
+            <p className="description">
+              Un immeuble résidentiel haut de gamme offrant des appartements spacieux
+              avec finitions premium et prestations de standing.
+            </p>
+
+            <div className="stats-grid">
+              {stats.map((item, index) => (
+                <div className="stat" key={index}>
+                  <span>{item.label}</span>
+                  <strong>
+                    {item.value} <small>{item.unit}</small>
+                  </strong>
                 </div>
               ))}
             </div>
-            <div style={{marginBottom:'1.2rem',overflow:'hidden',border:'1px solid #eee'}}>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.5!2d-17.4833!3d14.7167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5b8d9%3A0x0!2sSt%C3%A8le+Mermoz%2C+Dakar!5e0!3m2!1sfr!2ssn!4v1"
-                width="100%" height="150" style={{border:0,display:'block'}} allowFullScreen="" loading="lazy"/>
+
+            <div className="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.5!2d-17.4833!3d14.7167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5b8d9%3A0x0!2sSt%C3%A8le+Mermoz%2C+Dakar!5e0!3m2!1sfr!2ssn!4v1"
+                width="100%"
+                height="150"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              />
             </div>
-            <div style={{display:'flex',gap:'8px'}}>
-            <button
-  onClick={()=>router.push('/contact')}
-  style={{flex:1,background:'#c0392b',color:'#fff',border:'none',padding:'14px',fontSize:'10px',letterSpacing:'2px',textTransform:'uppercase',cursor:'pointer'}}>
-  Demander une visite
-</button>              <a href={whatsappLink} target="_blank" rel="noopener noreferrer"
-                style={{flex:1,background:'#25D366',color:'#fff',padding:'14px',fontSize:'10px',letterSpacing:'2px',textTransform:'uppercase',textDecoration:'none',display:'flex',alignItems:'center',justifyContent:'center',gap:'6px'}}>
+
+            <div className="actions">
+              <button onClick={() => router.push('/contact')}>
+                Demander une visite
+              </button>
+
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 💬 WhatsApp
               </a>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
 
-      {/* LIGHTBOX PHOTOS */}
       {lightbox !== null && (
-        <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.95)',zIndex:1000,display:'flex',alignItems:'center',justifyContent:'center'}}
-          onClick={()=>setLightbox(null)}>
-          <button onClick={e=>{e.stopPropagation();prev()}}
-            style={{position:'absolute',left:'2rem',top:'50%',transform:'translateY(-50%)',background:'rgba(255,255,255,0.1)',border:'1px solid rgba(255,255,255,0.2)',color:'#fff',width:'50px',height:'50px',borderRadius:'50%',fontSize:'18px',cursor:'pointer'}}>←</button>
-          <img src={photos[lightbox]} alt="lightbox"
-            style={{maxWidth:'90vw',maxHeight:'90vh',objectFit:'contain'}}
-            onClick={e=>e.stopPropagation()}/>
-          <button onClick={e=>{e.stopPropagation();next()}}
-            style={{position:'absolute',right:'2rem',top:'50%',transform:'translateY(-50%)',background:'rgba(255,255,255,0.1)',border:'1px solid rgba(255,255,255,0.2)',color:'#fff',width:'50px',height:'50px',borderRadius:'50%',fontSize:'18px',cursor:'pointer'}}>→</button>
-          <button onClick={()=>setLightbox(null)}
-            style={{position:'absolute',top:'1.5rem',right:'1.5rem',background:'transparent',border:'none',color:'#fff',fontSize:'28px',cursor:'pointer'}}>✕</button>
-          <div style={{position:'absolute',bottom:'1.5rem',left:'50%',transform:'translateX(-50%)',fontSize:'12px',color:'rgba(255,255,255,0.5)',letterSpacing:'2px'}}>
-            {lightbox+1} / {photos.length}
+        <div className="lightbox" onClick={() => setLightbox(null)}>
+          <button
+            className="nav prev"
+            onClick={e => {
+              e.stopPropagation()
+              prev()
+            }}
+          >
+            ←
+          </button>
+
+          <img
+            src={photos[lightbox]}
+            alt="Agrandissement"
+            onClick={e => e.stopPropagation()}
+          />
+
+          <button
+            className="nav next"
+            onClick={e => {
+              e.stopPropagation()
+              next()
+            }}
+          >
+            →
+          </button>
+
+          <button className="close" onClick={() => setLightbox(null)}>
+            ✕
+          </button>
+
+          <div className="counter">
+            {lightbox + 1} / {photos.length}
           </div>
         </div>
       )}
 
-      {/* LIGHTBOX VIDEO */}
       {showVideo && (
-        <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.95)',zIndex:1000,display:'flex',alignItems:'center',justifyContent:'center'}}
-          onClick={()=>setShowVideo(false)}>
-          <video controls autoPlay style={{width:'80vw',maxWidth:'900px',aspectRatio:'16/9'}}
-            onClick={e=>e.stopPropagation()}>
-            <source src="/videos/residence-victorine.mp4" type="video/mp4"/>
+        <div className="lightbox" onClick={() => setShowVideo(false)}>
+          <video
+            controls
+            autoPlay
+            onClick={e => e.stopPropagation()}
+          >
+            <source src="/videos/residence-victorine.mp4" type="video/mp4" />
           </video>
-          <button onClick={()=>setShowVideo(false)}
-            style={{position:'absolute',top:'1.5rem',right:'1.5rem',background:'transparent',border:'none',color:'#fff',fontSize:'28px',cursor:'pointer'}}>✕</button>
+
+          <button className="close" onClick={() => setShowVideo(false)}>
+            ✕
+          </button>
         </div>
       )}
+
+      <style jsx>{`
+        .project-section {
+          position: relative;
+          overflow: hidden;
+          padding: 6rem 3rem;
+          background: linear-gradient(135deg, #fff 0%, #fff6f5 100%);
+          border-top: 1px solid #f1e2df;
+        }
+
+        .bg-shape {
+          position: absolute;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        .shape-one {
+          width: 420px;
+          height: 420px;
+          right: -120px;
+          top: -120px;
+          border-radius: 50%;
+          background: rgba(192, 57, 43, 0.08);
+        }
+
+        .shape-two {
+          width: 280px;
+          height: 280px;
+          left: -100px;
+          bottom: -100px;
+          border-radius: 50%;
+          background: rgba(245, 187, 181, 0.28);
+        }
+
+        .container {
+          position: relative;
+          z-index: 1;
+          max-width: 1180px;
+          margin: 0 auto;
+        }
+
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          gap: 2rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .eyebrow {
+          display: block;
+          margin-bottom: 0.7rem;
+          color: #c0392b;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+        }
+
+        h2 {
+          margin: 0;
+          color: #151515;
+          font-size: clamp(2rem, 4vw, 3.2rem);
+          font-weight: 800;
+          letter-spacing: -1px;
+        }
+
+        .status {
+          background: #c0392b;
+          color: #fff;
+          padding: 12px 26px;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          box-shadow: 0 12px 30px rgba(192, 57, 43, 0.22);
+        }
+
+        .project-card {
+          display: grid;
+          grid-template-columns: 1.25fr 0.75fr;
+          gap: 2rem;
+          align-items: stretch;
+        }
+
+        .gallery {
+          min-width: 0;
+        }
+
+        .main-image {
+          position: relative;
+          height: 520px;
+          overflow: hidden;
+          cursor: pointer;
+          border-radius: 28px 28px 8px 8px;
+          box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .main-image img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+
+        .main-image:hover img {
+          transform: scale(1.04);
+        }
+
+        .image-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.42)
+          );
+        }
+
+        .project-label {
+          position: absolute;
+          left: 1.6rem;
+          bottom: 1.4rem;
+          color: #fff;
+          font-size: 13px;
+          font-weight: 800;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+        }
+
+        .video-button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.35);
+          border-radius: 999px;
+          padding: 10px 18px 10px 10px;
+          background: rgba(255, 255, 255, 0.16);
+          backdrop-filter: blur(12px);
+          color: #fff;
+          cursor: pointer;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          transition: all 0.3s ease;
+        }
+
+        .video-button:hover {
+          background: rgba(192, 57, 43, 0.9);
+          transform: translate(-50%, -50%) scale(1.04);
+        }
+
+        .play {
+          width: 46px;
+          height: 46px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background: #c0392b;
+          color: white;
+          font-size: 16px;
+          padding-left: 3px;
+        }
+
+        .thumbs {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          margin-top: 10px;
+        }
+
+        .thumb {
+          position: relative;
+          height: 130px;
+          overflow: hidden;
+          border: none;
+          padding: 0;
+          cursor: pointer;
+          border-radius: 8px 8px 22px 22px;
+          background: #eee;
+        }
+
+        .thumb img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          transition: transform 0.35s ease;
+        }
+
+        .thumb:hover img {
+          transform: scale(1.08);
+        }
+
+        .more {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0, 0, 0, 0.58);
+          color: #fff;
+          text-align: center;
+        }
+
+        .more strong {
+          font-size: 30px;
+          font-weight: 400;
+        }
+
+        .more span {
+          margin-top: 4px;
+          font-size: 9px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        .info-card {
+          position: sticky;
+          top: 2rem;
+          align-self: start;
+          padding: 2rem;
+          border-radius: 28px;
+          background: rgba(255, 255, 255, 0.88);
+          border: 1px solid rgba(192, 57, 43, 0.1);
+          box-shadow: 0 30px 80px rgba(192, 57, 43, 0.12);
+          backdrop-filter: blur(12px);
+        }
+
+        .tag {
+          display: inline-block;
+          margin-bottom: 1rem;
+          padding: 8px 14px;
+          border-radius: 999px;
+          background: #fff0ef;
+          color: #c0392b;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        .info-card h3 {
+          margin: 0;
+          color: #151515;
+          font-size: 30px;
+          font-weight: 800;
+          letter-spacing: -0.5px;
+        }
+
+        .location {
+          margin: 0.6rem 0 1.4rem;
+          color: #c0392b;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        .description {
+          margin: 0 0 1.6rem;
+          padding-left: 1rem;
+          border-left: 3px solid #e0b0ad;
+          color: #696969;
+          font-size: 14px;
+          line-height: 1.9;
+        }
+
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+          margin-bottom: 1.4rem;
+        }
+
+        .stat {
+          padding: 1rem;
+          border-radius: 16px;
+          background: linear-gradient(135deg, #fff 0%, #fff3f2 100%);
+          border: 1px solid rgba(192, 57, 43, 0.08);
+        }
+
+        .stat span {
+          display: block;
+          margin-bottom: 6px;
+          color: #a9a9a9;
+          font-size: 8px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        .stat strong {
+          color: #151515;
+          font-size: 18px;
+          font-weight: 700;
+        }
+
+        .stat small {
+          color: #c0392b;
+          font-size: 10px;
+          font-weight: 700;
+        }
+
+        .map {
+          overflow: hidden;
+          border-radius: 18px;
+          border: 1px solid #eee;
+          margin-bottom: 1.3rem;
+        }
+
+        .map iframe {
+          display: block;
+        }
+
+        .actions {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+
+        .actions button,
+        .actions a {
+          min-height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          text-decoration: none;
+          color: #fff;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .actions button {
+          background: #c0392b;
+        }
+
+        .actions a {
+          background: #25d366;
+        }
+
+        .actions button:hover,
+        .actions a:hover {
+          transform: translateY(-3px);
+          filter: brightness(0.96);
+        }
+
+        .lightbox {
+          position: fixed;
+          inset: 0;
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0, 0, 0, 0.95);
+        }
+
+        .lightbox img {
+          max-width: 90vw;
+          max-height: 90vh;
+          object-fit: contain;
+        }
+
+        .lightbox video {
+          width: 80vw;
+          max-width: 900px;
+          aspect-ratio: 16 / 9;
+        }
+
+        .nav,
+        .close {
+          position: absolute;
+          border: none;
+          color: #fff;
+          cursor: pointer;
+        }
+
+        .nav {
+          top: 50%;
+          transform: translateY(-50%);
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          font-size: 18px;
+        }
+
+        .prev {
+          left: 2rem;
+        }
+
+        .next {
+          right: 2rem;
+        }
+
+        .close {
+          top: 1.5rem;
+          right: 1.5rem;
+          background: transparent;
+          font-size: 28px;
+        }
+
+        .counter {
+          position: absolute;
+          bottom: 1.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          color: rgba(255, 255, 255, 0.55);
+          font-size: 12px;
+          letter-spacing: 2px;
+        }
+
+        @media (max-width: 980px) {
+          .project-card {
+            grid-template-columns: 1fr;
+          }
+
+          .info-card {
+            position: relative;
+            top: auto;
+          }
+
+          .main-image {
+            height: 440px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .project-section {
+            padding: 4rem 1rem;
+          }
+
+          .header {
+            align-items: flex-start;
+            flex-direction: column;
+          }
+
+          .status {
+            width: 100%;
+            text-align: center;
+          }
+
+          .main-image {
+            height: 330px;
+            border-radius: 22px 22px 8px 8px;
+          }
+
+          .thumb {
+            height: 95px;
+          }
+
+          .info-card {
+            padding: 1.4rem;
+          }
+
+          .stats-grid,
+          .actions {
+            grid-template-columns: 1fr;
+          }
+
+          .video-button {
+            flex-direction: column;
+            padding: 10px;
+          }
+
+          .video-button span:last-child {
+            display: none;
+          }
+        }
+      `}</style>
     </section>
   )
 }

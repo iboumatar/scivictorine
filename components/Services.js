@@ -1,123 +1,367 @@
 'use client'
+
 import { useRouter } from 'next/navigation'
 
 const services = [
-  { title: "Construction d'immeubles", href: '/services#service-1', desc: "Conception et réalisation de bâtiments résidentiels et commerciaux aux standards internationaux.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> },
-  { title: "Vente d'appartements", href: '/services#service-2', desc: "Des appartements modernes et fonctionnels adaptés à tous les profils et budgets.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg> },
-  { title: "Vente de terrains", href: '/services#service-3', desc: "Un large portefeuille de terrains viabilisés dans les zones les plus prisées du Sénégal.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> },
-  { title: "Lotissement", href: '/services#service-4', desc: "Aménagement et viabilisation de terrains en lots constructibles selon les normes urbanistiques.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> },
-  { title: "Recherche de financement", href: '/services#service-5', desc: "Montage de dossiers et mise en relation avec les partenaires bancaires les mieux adaptés.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> },
-  { title: "Encadrement fiscal", href: '/services#service-6', desc: "Accompagnement fiscal et juridique pour sécuriser et optimiser vos investissements.", icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> },
+  {
+    title: "Construction d'immeubles",
+    href: '/services#service-1',
+    desc: "Conception et réalisation de bâtiments résidentiels et commerciaux aux standards internationaux.",
+    icon: "🏢",
+  },
+  {
+    title: "Vente d'appartements",
+    href: '/services#service-2',
+    desc: "Des appartements modernes et fonctionnels adaptés à tous les profils et budgets.",
+    icon: "🏠",
+  },
+  {
+    title: "Terrains & Lotissement",
+    href: '/services#service-3',
+    desc: "Vente de terrains viabilisés, aménagement foncier et lotissement en lots constructibles selon les normes urbanistiques.",
+    icon: "🗺️",
+  },
+  {
+    title: "Recherche de financement",
+    href: '/services#service-4',
+    desc: "Montage de dossiers et mise en relation avec les partenaires bancaires les mieux adaptés.",
+    icon: "💰",
+  },
+  {
+    title: "Encadrement fiscal",
+    href: '/services#service-5',
+    desc: "Accompagnement fiscal pour sécuriser et optimiser vos investissements immobiliers.",
+    icon: "📄",
+  },
+  {
+    title: "Conseil et veille juridique",
+    href: '/services#service-6',
+    desc: "Conseil, suivi réglementaire et veille juridique pour anticiper les risques et sécuriser vos opérations immobilières.",
+    icon: "⚖️",
+  },
 ]
 
 export default function Services() {
   const router = useRouter()
 
   return (
-    <section style={{padding:'5rem 3rem',position:'relative',overflow:'hidden',background:'#fdf1f0'}}>
+    <section className="services-section">
+      <div className="bg-shape shape-one" />
+      <div className="bg-shape shape-two" />
+      <div className="bg-shape shape-three" />
 
-      {/* Couches géométriques */}
-      <div style={{position:'absolute',inset:0,background:'#fdecea',clipPath:'polygon(0 0, 100% 0, 100% 45%, 0 70%)',zIndex:0}}/>
-      <div style={{position:'absolute',inset:0,background:'#fad5d1',clipPath:'polygon(0 0, 100% 0, 100% 20%, 0 40%)',zIndex:0}}/>
-      <div style={{position:'absolute',inset:0,background:'#f5bbb5',clipPath:'polygon(0 0, 100% 0, 100% 5%, 0 18%)',zIndex:0}}/>
+      <div className="glass-panel">
+        <div className="services-header">
+          <span>Ce que nous faisons</span>
 
-      {/* Contenu */}
-      <div style={{position:'relative',zIndex:1}}>
-        <div style={{textAlign:'center',marginBottom:'4rem'}}>
-          <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Ce que nous faisons</div>
-          <h2 style={{fontSize:'28px',fontWeight:'700',color:'#1a1a1a',letterSpacing:'2px'}}>Nos Services</h2>
-          <div style={{width:'40px',height:'2px',background:'#c0392b',margin:'14px auto 0'}}/>
+          <h2>Nos Services</h2>
+
+          <p>
+            Des solutions immobilières complètes pour construire,
+            investir et sécuriser vos projets.
+          </p>
         </div>
 
-        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'1.5rem',maxWidth:'960px',margin:'0 auto'}}>
-          {services.map((s,i)=>(
-            <div key={i} style={{marginTop:'1.5rem'}}
-              onClick={()=>router.push(s.href)}
-              onMouseEnter={e=>{
-                e.currentTarget.querySelector('.ci').style.background='rgba(255,255,255,0.2)'
-                e.currentTarget.querySelector('.ci').style.borderColor='rgba(255,255,255,0.3)'
-                e.currentTarget.querySelector('.ci').style.color='#fff'
-                e.currentTarget.querySelector('.ct').style.color='#fff'
-                e.currentTarget.querySelector('.cd').style.color='rgba(255,255,255,0.75)'
-                e.currentTarget.querySelector('.cb').style.background='rgba(255,255,255,0.15)'
-                e.currentTarget.querySelector('.cb').style.borderColor='rgba(255,255,255,0.4)'
-                e.currentTarget.querySelector('.cb').style.color='#fff'
-                e.currentTarget.querySelector('.card-wrap').style.background='#c0392b'
-                e.currentTarget.querySelector('.card-wrap').style.borderColor='#c0392b'
-                e.currentTarget.querySelector('.card-wrap').style.transform='translateY(-6px)'
-                e.currentTarget.querySelector('.card-wrap').style.boxShadow='0 20px 60px rgba(192,57,43,0.25), 0 8px 20px rgba(0,0,0,0.08)'
-              }}
-              onMouseLeave={e=>{
-                e.currentTarget.querySelector('.ci').style.background='#fff0ef'
-                e.currentTarget.querySelector('.ci').style.borderColor='#eee'
-                e.currentTarget.querySelector('.ci').style.color='#c0392b'
-                e.currentTarget.querySelector('.ct').style.color='#1a1a1a'
-                e.currentTarget.querySelector('.cd').style.color='#888'
-                e.currentTarget.querySelector('.cb').style.background='transparent'
-                e.currentTarget.querySelector('.cb').style.borderColor='#e0b0ad'
-                e.currentTarget.querySelector('.cb').style.color='#c0392b'
-                e.currentTarget.querySelector('.card-wrap').style.background='rgba(255,255,255,0.95)'
-                e.currentTarget.querySelector('.card-wrap').style.borderColor='rgba(192,57,43,0.08)'
-                e.currentTarget.querySelector('.card-wrap').style.transform='translateY(0)'
-                e.currentTarget.querySelector('.card-wrap').style.boxShadow='0 8px 30px rgba(192,57,43,0.08), 0 2px 8px rgba(0,0,0,0.04)'
-              }}>
-              <div className="card-wrap" style={{
-                background:'rgba(255,255,255,0.95)',
-                border:'1px solid rgba(192,57,43,0.08)',
-                borderRadius:'8px',
-                padding:'2.5rem 2rem',
-                transition:'all 0.35s ease',
-                cursor:'pointer',
-                boxShadow:'0 8px 30px rgba(192,57,43,0.08), 0 2px 8px rgba(0,0,0,0.04)',
-                textAlign:'center',
-              }}>
-                <div className="ci" style={{
-                  width:'64px',
-                  height:'64px',
-                  border:'1px solid #eee',
-                  borderRadius:'50%',
-                  display:'flex',
-                  alignItems:'center',
-                  justifyContent:'center',
-                  background:'#fff0ef',
-                  color:'#c0392b',
-                  transition:'all 0.35s',
-                  margin:'0 auto 1.5rem',
-                }}>
-                  {s.icon}
-                </div>
-                <h3 className="ct" style={{
-                  fontSize:'15px',
-                  fontWeight:'700',
-                  color:'#1a1a1a',
-                  letterSpacing:'1px',
-                  textTransform:'uppercase',
-                  marginBottom:'12px',
-                  transition:'color 0.35s',
-                }}>{s.title}</h3>
-                <p className="cd" style={{
-                  fontSize:'13px',
-                  color:'#888',
-                  lineHeight:'1.8',
-                  marginBottom:'1.5rem',
-                  transition:'color 0.35s',
-                }}>{s.desc}</p>
-                <span className="cb" style={{
-                  display:'inline-block',
-                  border:'1px solid #e0b0ad',
-                  color:'#c0392b',
-                  fontSize:'10px',
-                  letterSpacing:'2px',
-                  textTransform:'uppercase',
-                  padding:'8px 20px',
-                  transition:'all 0.35s',
-                  background:'transparent',
-                }}>En savoir plus</span>
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <button
+              key={index}
+              className="service-card"
+              onClick={() => router.push(service.href)}
+            >
+              <div className="icon-wrapper">
+                {service.icon}
               </div>
-            </div>
+
+              <h3>{service.title}</h3>
+
+              <p>{service.desc}</p>
+
+              <span>Découvrir</span>
+            </button>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .services-section {
+          position: relative;
+          overflow: hidden;
+          padding: 6rem 2rem;
+          background:
+            radial-gradient(circle at top left, rgba(192, 57, 43, 0.22), transparent 35%),
+            radial-gradient(circle at bottom right, rgba(142, 36, 26, 0.16), transparent 35%),
+            linear-gradient(135deg, #fff8f7 0%, #f9d9d5 100%);
+        }
+
+        .bg-shape {
+          position: absolute;
+          opacity: 0.25;
+          filter: blur(12px);
+          pointer-events: none;
+          transform: rotate(35deg);
+        }
+
+        .shape-one {
+          width: 260px;
+          height: 260px;
+          top: 60px;
+          left: 8%;
+          background: rgba(192, 57, 43, 0.20);
+        }
+
+        .shape-two {
+          width: 340px;
+          height: 340px;
+          right: 5%;
+          bottom: -80px;
+          background: rgba(245, 187, 181, 0.45);
+        }
+
+        .shape-three {
+          width: 180px;
+          height: 180px;
+          right: 28%;
+          top: 90px;
+          background: rgba(255, 255, 255, 0.40);
+        }
+
+        .glass-panel {
+          position: relative;
+          z-index: 2;
+          max-width: 1120px;
+          margin: 0 auto;
+          padding: 4rem 2rem;
+
+          border-radius: 12px;
+
+          background: rgba(255, 255, 255, 0.42);
+
+          border: 1px solid rgba(255, 255, 255, 0.55);
+
+          backdrop-filter: blur(18px);
+          -webkit-backdrop-filter: blur(18px);
+
+          box-shadow:
+            0 30px 90px rgba(192, 57, 43, 0.16),
+            inset 0 1px 0 rgba(255,255,255,0.5);
+        }
+
+        .services-header {
+          text-align: center;
+          margin-bottom: 3.5rem;
+        }
+
+        .services-header span {
+          display: block;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          color: #c0392b;
+          margin-bottom: 0.8rem;
+        }
+
+        .services-header h2 {
+          margin: 0;
+          font-size: clamp(2rem, 4vw, 3.2rem);
+          color: #171717;
+          font-weight: 900;
+          letter-spacing: -1px;
+        }
+
+        .services-header p {
+          max-width: 620px;
+          margin: 1rem auto 0;
+          color: #6f3b35;
+          font-size: 15px;
+          line-height: 1.8;
+        }
+
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.4rem;
+        }
+
+        .service-card {
+          position: relative;
+          overflow: hidden;
+
+          min-height: 260px;
+          padding: 2.2rem 1.8rem;
+
+          border-radius: 10px;
+
+          border: 1px solid rgba(255, 255, 255, 0.6);
+
+          background: rgba(255, 255, 255, 0.38);
+
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+
+          box-shadow: 0 16px 45px rgba(142, 36, 26, 0.1);
+
+          text-align: left;
+          cursor: pointer;
+          transition: all 0.35s ease;
+        }
+
+        .service-card::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 5px;
+          height: 100%;
+          background: #c0392b;
+          z-index: 1;
+        }
+
+        .service-card::after {
+          content: "";
+          position: absolute;
+
+          width: 140px;
+          height: 140px;
+
+          right: -70px;
+          top: -70px;
+
+          background: rgba(192, 57, 43, 0.18);
+
+          transform: rotate(45deg);
+
+          transition: all 0.35s ease;
+        }
+
+        .service-card:hover {
+          transform: translateY(-10px);
+          background: rgba(192, 57, 43, 0.82);
+          border-color: rgba(255, 255, 255, 0.45);
+          box-shadow: 0 26px 80px rgba(192, 57, 43, 0.28);
+        }
+
+        .service-card:hover::after {
+          transform: rotate(45deg) scale(1.45);
+          background: rgba(255, 255, 255, 0.14);
+        }
+
+        .service-card > * {
+          position: relative;
+          z-index: 2;
+        }
+
+        .icon-wrapper {
+          width: 64px;
+          height: 64px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 8px;
+
+          background: rgba(255, 255, 255, 0.7);
+
+          border: 1px solid rgba(255, 255, 255, 0.75);
+
+          color: #c0392b;
+          font-size: 28px;
+
+          margin-bottom: 1.6rem;
+
+          transition: all 0.35s ease;
+        }
+
+        .service-card:hover .icon-wrapper {
+          background: rgba(255, 255, 255, 0.18);
+          color: #fff;
+          transform: scale(1.06);
+        }
+
+        .service-card h3 {
+          margin: 0 0 0.9rem;
+          color: #221211;
+          font-size: 16px;
+          font-weight: 900;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          transition: color 0.35s ease;
+        }
+
+        .service-card p {
+          margin: 0;
+          color: #76524e;
+          font-size: 13.5px;
+          line-height: 1.75;
+          transition: color 0.35s ease;
+        }
+
+        .service-card span {
+          display: inline-flex;
+
+          margin-top: 1.6rem;
+          padding: 9px 18px;
+
+          border-radius: 6px;
+
+          border: 1px solid rgba(192, 57, 43, 0.25);
+
+          color: #c0392b;
+
+          font-size: 10px;
+          font-weight: 800;
+
+          letter-spacing: 2px;
+          text-transform: uppercase;
+
+          transition: all 0.35s ease;
+        }
+
+        .service-card:hover h3,
+        .service-card:hover span {
+          color: #fff;
+        }
+
+        .service-card:hover p {
+          color: rgba(255, 255, 255, 0.82);
+        }
+
+        .service-card:hover span {
+          border-color: rgba(255,255,255,0.45);
+          background: rgba(255,255,255,0.12);
+        }
+
+        @media (max-width: 950px) {
+          .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .glass-panel {
+            padding: 3.5rem 1.5rem;
+          }
+        }
+
+        @media (max-width: 620px) {
+          .services-section {
+            padding: 4rem 1rem;
+          }
+
+          .glass-panel {
+            border-radius: 10px;
+            padding: 3rem 1rem;
+          }
+
+          .services-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .service-card {
+            min-height: auto;
+          }
+        }
+      `}</style>
     </section>
   )
 }

@@ -66,37 +66,58 @@ export default function Hero() {
           opacity: i === cur ? 1 : 0,
           transition: 'opacity 0.9s ease',
         }}>
+          {/* Photo sans aucun filtre */}
           <div style={{
             position: 'absolute', inset: 0,
             backgroundImage: `url(${slide.image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }} />
-          <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to right, rgba(255,255,255,0.85) 32%, rgba(255,255,255,0.2) 58%, rgba(255,255,255,0.0) 100%)',          }} />
+
+          {/* Texte directement sur la photo avec ombres */}
           <div style={{
             position: 'relative', zIndex: 2,
             height: '100%', display: 'flex',
             flexDirection: 'column', justifyContent: 'center',
-            padding: '0 4rem 0 8rem', maxWidth: '620px',
+            padding: '0 4rem 0 8rem', maxWidth: '580px',
           }}>
-            <div style={{ width: '40px', height: '2px', background: '#c0392b', marginBottom: '1.2rem' }} />
-            <div style={{ fontSize: '10px', letterSpacing: '4px', textTransform: 'uppercase', color: '#c0392b', marginBottom: '1rem' }}>
-              {slide.badge}
-            </div>
-            <h1 style={{ fontSize: '38px', fontWeight: '700', color: '#1a1a1a', letterSpacing: '2px', lineHeight: '1.2', marginBottom: '1rem' }}>
+            <div style={{
+              width: '40px', height: '2px', background: '#c0392b',
+              marginBottom: '1.2rem',
+              filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.5))'
+            }} />
+            <div style={{
+  fontSize: '13px', letterSpacing: '4px',
+  textTransform: 'uppercase', color: '#fff',
+  marginBottom: '1rem', fontWeight: '900',
+  background: '#c0392b',
+  display: 'inline-block',
+  padding: '4px 12px',
+}}>
+  {slide.badge}
+</div>
+◊
+            <h1 style={{
+              fontSize: '38px', fontWeight: '900', color: '#fff',
+              letterSpacing: '2px', lineHeight: '1.2', marginBottom: '1rem',
+              textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9)',
+            }}>
               {slide.title}<br />
-              <span style={{ color: '#c0392b' }}>{slide.highlight}</span>
+              <span style={{ color: '#e74c3c' }}>{slide.highlight}</span>
               {slide.suite ? ` ${slide.suite}` : ''}
             </h1>
-            <p style={{ fontSize: '14px', color: '#666', lineHeight: '1.9', marginBottom: '2rem' }}>
+            <p style={{
+              fontSize: '14px', color: '#fff',
+              lineHeight: '1.9', marginBottom: '2rem',
+              textShadow: '0 1px 6px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.8)',
+              fontWeight: '700',
+            }}>
               {slide.description}
             </p>
             <div style={{ display: 'flex', gap: '1rem' }}>
               <button
                 onClick={() => router.push(slide.btn1.href)}
-                style={{ background: '#c0392b', color: '#fff', border: 'none', padding: '13px 30px', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer', transition: 'opacity 0.2s' }}
+                style={{ background: '#c0392b', color: '#fff', border: 'none', padding: '13px 30px', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer', transition: 'opacity 0.2s', boxShadow: '0 4px 15px rgba(0,0,0,0.4)' }}
                 onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
                 onMouseLeave={e => e.currentTarget.style.opacity = '1'}
               >
@@ -104,9 +125,9 @@ export default function Hero() {
               </button>
               <button
                 onClick={() => router.push(slide.btn2.href)}
-                style={{ background: 'transparent', color: '#1a1a1a', border: '1px solid #ccc', padding: '13px 30px', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s' }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = '#c0392b'; e.currentTarget.style.color = '#c0392b' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = '#ccc'; e.currentTarget.style.color = '#1a1a1a' }}
+                style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.8)', padding: '13px 30px', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#c0392b'; e.currentTarget.style.background = '#c0392b' }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.8)'; e.currentTarget.style.background = 'transparent' }}
               >
                 {slide.btn2.label}
               </button>
@@ -118,17 +139,17 @@ export default function Hero() {
       {/* Flèche gauche */}
       <button
         onClick={() => goTo(cur - 1)}
-        style={{ position: 'absolute', left: '2rem', top: '40%', transform: 'translateY(-50%)', zIndex: 10, background: '#fff', border: '1px solid #ddd', color: '#c0392b', width: '46px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '16px', transition: 'all 0.2s' }}
-        onMouseEnter={e => { e.currentTarget.style.background = '#c0392b'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#c0392b' }}
-        onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#c0392b'; e.currentTarget.style.borderColor = '#ddd' }}
+        style={{ position: 'absolute', left: '2rem', top: '40%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', width: '46px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '16px', transition: 'all 0.2s' }}
+        onMouseEnter={e => { e.currentTarget.style.background = '#c0392b'; e.currentTarget.style.borderColor = '#c0392b' }}
+        onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)' }}
       >←</button>
 
       {/* Flèche droite */}
       <button
         onClick={() => goTo(cur + 1)}
-        style={{ position: 'absolute', right: '2rem', top: '40%', transform: 'translateY(-50%)', zIndex: 10, background: '#fff', border: '1px solid #ddd', color: '#c0392b', width: '46px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '16px', transition: 'all 0.2s' }}
-        onMouseEnter={e => { e.currentTarget.style.background = '#c0392b'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#c0392b' }}
-        onMouseLeave={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#c0392b'; e.currentTarget.style.borderColor = '#ddd' }}
+        style={{ position: 'absolute', right: '2rem', top: '40%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', width: '46px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '16px', transition: 'all 0.2s' }}
+        onMouseEnter={e => { e.currentTarget.style.background = '#c0392b'; e.currentTarget.style.borderColor = '#c0392b' }}
+        onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)' }}
       >→</button>
 
       {/* Dots */}
@@ -136,15 +157,15 @@ export default function Hero() {
         {slides.map((_, i) => (
           <div key={i} onClick={() => goTo(i)} style={{
             width: i === cur ? '42px' : '24px', height: '2px',
-            background: i === cur ? '#c0392b' : '#ccc',
+            background: i === cur ? '#c0392b' : 'rgba(255,255,255,0.5)',
             cursor: 'pointer', transition: 'all 0.3s'
           }} />
         ))}
       </div>
 
       {/* Compteur */}
-      <div style={{ position: 'absolute', bottom: '2rem', right: '2rem', fontSize: '11px', color: '#bbb', letterSpacing: '3px', zIndex: 10 }}>
-        <span style={{ color: '#c0392b' }}>{String(cur + 1).padStart(2, '0')}</span> / {String(slides.length).padStart(2, '0')}
+      <div style={{ position: 'absolute', bottom: '2rem', right: '2rem', fontSize: '11px', color: 'rgba(255,255,255,0.8)', letterSpacing: '3px', zIndex: 10 }}>
+        <span style={{ color: '#e74c3c' }}>{String(cur + 1).padStart(2, '0')}</span> / {String(slides.length).padStart(2, '0')}
       </div>
     </section>
   )
