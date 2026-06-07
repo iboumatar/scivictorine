@@ -122,16 +122,24 @@ export default function ProjectFeature() {
             </div>
 
             <div className="map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.5!2d-17.4833!3d14.7167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5b8d9%3A0x0!2sSt%C3%A8le+Mermoz%2C+Dakar!5e0!3m2!1sfr!2ssn!4v1"
-                width="100%"
-                height="150"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-              />
-            </div>
-
+  <iframe
+    src="https://maps.google.com/maps?q=14.706449,-17.475609&z=18&output=embed"
+    width="100%"
+    height="150"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
+<a
+  href="https://www.google.com/maps?q=14.706449,-17.475609"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="map-link"
+>
+  📍 Voir l'emplacement exact
+</a>
             <div className="actions">
               <button onClick={() => router.push('/contact')}>
                 Demander une visite
@@ -519,6 +527,34 @@ export default function ProjectFeature() {
         .map iframe {
           display: block;
         }
+          .map-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1.3rem;
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: #fff3f2;
+
+  color: #c0392b;
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: all .3s ease;
+}
+
+.map-link:hover {
+  background: #c0392b;
+  color: white;
+}
 
         .actions {
           display: grid;
