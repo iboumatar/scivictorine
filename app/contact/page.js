@@ -16,13 +16,12 @@ export default function ContactPage() {
 
       {/* HERO */}
       <section style={{position:'relative',height:'360px',overflow:'hidden'}}>
-        <div style={{position:'absolute',inset:0,backgroundImage:"url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80')",backgroundSize:'cover',backgroundPosition:'center',filter:'brightness(0.35)'}}/>
-        <div style={{position:'absolute',inset:0,background:'linear-gradient(to right, rgba(192,57,43,0.7), rgba(0,0,0,0.2))'}}/>
+        <div style={{position:'absolute',inset:0,backgroundImage:"url('/images/contact/hero.jpg')",backgroundSize:'cover',backgroundPosition:'center'}}/>
         <div style={{position:'relative',zIndex:2,height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:'0 4rem'}}>
-          <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'rgba(255,255,255,0.6)',marginBottom:'12px'}}>SCI Victorine Immo</div>
+          <div style={{fontSize:'12px',letterSpacing:'4px',textTransform:'uppercase',color:'#fff',marginBottom:'12px',textShadow:'0 1px 6px rgba(0,0,0,0.8)'}}>SCI Victorine Immo</div>
           <div style={{width:'40px',height:'3px',background:'#c0392b',marginBottom:'16px'}}/>
-          <h1 style={{fontSize:'48px',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px'}}>Nous <span style={{color:'#e74c3c'}}>contacter</span></h1>
-          <p style={{fontSize:'15px',color:'rgba(255,255,255,0.7)',maxWidth:'500px',lineHeight:'1.8'}}>Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner dans vos projets.</p>
+          <h1 style={{fontSize:'48px',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px',textShadow:'0 2px 12px rgba(0,0,0,0.8)'}}>Nous <span style={{color:'#e74c3c'}}>contacter</span></h1>
+          <p style={{fontSize:'17px',color:'#fff',maxWidth:'500px',lineHeight:'1.8',textShadow:'0 1px 6px rgba(0,0,0,0.9)'}}>Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner dans vos projets.</p>
         </div>
       </section>
 
@@ -32,7 +31,7 @@ export default function ContactPage() {
 
           {/* Infos contact */}
           <div>
-            <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Coordonnées</div>
+            <div style={{fontSize:'12px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Coordonnées</div>
             <h2 style={{fontSize:'28px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Parlons de votre projet</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'2rem'}}/>
 
@@ -40,17 +39,18 @@ export default function ContactPage() {
             <div style={{display:'flex',flexDirection:'column',gap:'1.8rem',marginBottom:'2.5rem'}}>
               {[
                 {icon:'📍',label:'Adresse',value:'Stèle Mermoz, Dakar — Sénégal'},
-                {icon:'📞',label:'Téléphone',value:'+221 XX XXX XX XX'},
-                {icon:'✉️',label:'Email',value:'contact@scivictorine.sn'},
-                {icon:'🕐',label:'Horaires',value:'Lun – Ven : 8h00 – 18h00'},
+                {icon:'📱',label:'Mobile',value:'78 210 90 90'},
+                {icon:'📞',label:'Fixe',value:'33 824 66 68'},
+                {icon:'✉️',label:'Email',value:'diallohawa@ceris.sn'},
+                {icon:'🕐',label:'Horaires',value:'Lun – Ven : 08h00 – 17h00'},
               ].map((item,i)=>(
                 <div key={i} style={{display:'flex',gap:'1rem',alignItems:'flex-start'}}>
                   <div style={{width:'44px',height:'44px',borderRadius:'50%',background:'#fff0ef',border:'1px solid #eee',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'18px',flexShrink:0}}>
                     {item.icon}
                   </div>
                   <div>
-                    <div style={{fontSize:'9px',letterSpacing:'3px',textTransform:'uppercase',color:'#c0392b',marginBottom:'4px'}}>{item.label}</div>
-                    <div style={{fontSize:'14px',color:'#1a1a1a',fontWeight:'700'}}>{item.value}</div>
+                    <div style={{fontSize:'11px',letterSpacing:'3px',textTransform:'uppercase',color:'#c0392b',marginBottom:'4px'}}>{item.label}</div>
+                    <div style={{fontSize:'16px',color:'#1a1a1a',fontWeight:'700'}}>{item.value}</div>
                   </div>
                 </div>
               ))}
@@ -58,7 +58,7 @@ export default function ContactPage() {
 
             {/* WhatsApp */}
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer"
-              style={{display:'flex',alignItems:'center',gap:'10px',background:'#25D366',color:'#fff',padding:'14px 20px',fontSize:'11px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',textDecoration:'none',marginBottom:'2rem'}}>
+              style={{display:'flex',alignItems:'center',gap:'10px',background:'#25D366',color:'#fff',padding:'14px 20px',fontSize:'13px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',textDecoration:'none',marginBottom:'2rem'}}>
               💬 Contacter sur WhatsApp
             </a>
 
@@ -75,33 +75,33 @@ export default function ContactPage() {
 
           {/* Formulaire */}
           <div>
-            <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Formulaire</div>
+            <div style={{fontSize:'12px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Formulaire</div>
             <h2 style={{fontSize:'28px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Envoyez-nous un message</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'2rem'}}/>
 
             {sent ? (
               <div style={{background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'4px',padding:'2rem',textAlign:'center'}}>
                 <div style={{fontSize:'32px',marginBottom:'12px'}}>✅</div>
-                <div style={{fontSize:'16px',fontWeight:'900',color:'#15803d',marginBottom:'8px'}}>Message envoyé !</div>
-                <div style={{fontSize:'14px',color:'#166534'}}>Nous vous répondrons dans les plus brefs délais.</div>
+                <div style={{fontSize:'18px',fontWeight:'900',color:'#15803d',marginBottom:'8px'}}>Message envoyé !</div>
+                <div style={{fontSize:'16px',color:'#166534'}}>Nous vous répondrons dans les plus brefs délais.</div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{display:'flex',flexDirection:'column',gap:'1.2rem'}}>
                 <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'1.2rem'}}>
                   <div>
-                    <div style={{fontSize:'9px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Nom complet *</div>
+                    <div style={{fontSize:'11px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Nom complet *</div>
                     <input required type="text" placeholder="Votre nom" value={form.nom}
                       onChange={e=>setForm({...form,nom:e.target.value})}
-                      style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:'#1a1a1a',padding:'12px 16px',fontSize:'13px',outline:'none',transition:'border-color 0.2s'}}
+                      style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:'#1a1a1a',padding:'12px 16px',fontSize:'15px',outline:'none',transition:'border-color 0.2s'}}
                       onFocus={e=>e.target.style.borderColor='#c0392b'}
                       onBlur={e=>e.target.style.borderColor='#eee'}
                     />
                   </div>
                   <div>
-                    <div style={{fontSize:'9px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Email *</div>
+                    <div style={{fontSize:'11px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Email *</div>
                     <input required type="email" placeholder="votre@email.com" value={form.email}
                       onChange={e=>setForm({...form,email:e.target.value})}
-                      style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:'#1a1a1a',padding:'12px 16px',fontSize:'13px',outline:'none',transition:'border-color 0.2s'}}
+                      style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:'#1a1a1a',padding:'12px 16px',fontSize:'15px',outline:'none',transition:'border-color 0.2s'}}
                       onFocus={e=>e.target.style.borderColor='#c0392b'}
                       onBlur={e=>e.target.style.borderColor='#eee'}
                     />
@@ -110,19 +110,19 @@ export default function ContactPage() {
 
                 <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'1.2rem'}}>
                   <div>
-                    <div style={{fontSize:'9px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Téléphone</div>
+                    <div style={{fontSize:'11px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Téléphone</div>
                     <input type="tel" placeholder="+221 XX XXX XX XX" value={form.telephone}
                       onChange={e=>setForm({...form,telephone:e.target.value})}
-                      style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:'#1a1a1a',padding:'12px 16px',fontSize:'13px',outline:'none',transition:'border-color 0.2s'}}
+                      style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:'#1a1a1a',padding:'12px 16px',fontSize:'15px',outline:'none',transition:'border-color 0.2s'}}
                       onFocus={e=>e.target.style.borderColor='#c0392b'}
                       onBlur={e=>e.target.style.borderColor='#eee'}
                     />
                   </div>
                   <div>
-                    <div style={{fontSize:'9px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Sujet *</div>
+                    <div style={{fontSize:'11px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Sujet *</div>
                     <select required value={form.sujet}
                       onChange={e=>setForm({...form,sujet:e.target.value})}
-                      style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:form.sujet?'#1a1a1a':'#aaa',padding:'12px 16px',fontSize:'13px',outline:'none',appearance:'none',transition:'border-color 0.2s'}}
+                      style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:form.sujet?'#1a1a1a':'#aaa',padding:'12px 16px',fontSize:'15px',outline:'none',appearance:'none',transition:'border-color 0.2s'}}
                       onFocus={e=>e.target.style.borderColor='#c0392b'}
                       onBlur={e=>e.target.style.borderColor='#eee'}>
                       <option value="">Choisir un sujet</option>
@@ -138,18 +138,18 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <div style={{fontSize:'9px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Message *</div>
+                  <div style={{fontSize:'11px',letterSpacing:'3px',textTransform:'uppercase',color:'#888',marginBottom:'6px'}}>Message *</div>
                   <textarea required placeholder="Décrivez votre projet ou votre demande..." value={form.message}
                     onChange={e=>setForm({...form,message:e.target.value})}
                     rows={6}
-                    style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:'#1a1a1a',padding:'12px 16px',fontSize:'13px',outline:'none',resize:'none',transition:'border-color 0.2s'}}
+                    style={{width:'100%',background:'#f9f9f9',border:'1px solid #eee',color:'#1a1a1a',padding:'12px 16px',fontSize:'15px',outline:'none',resize:'none',transition:'border-color 0.2s'}}
                     onFocus={e=>e.target.style.borderColor='#c0392b'}
                     onBlur={e=>e.target.style.borderColor='#eee'}
                   />
                 </div>
 
                 <button type="submit"
-                  style={{background:'#c0392b',color:'#fff',border:'none',padding:'16px',fontSize:'12px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',cursor:'pointer',transition:'opacity 0.2s'}}
+                  style={{background:'#c0392b',color:'#fff',border:'none',padding:'16px',fontSize:'14px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',cursor:'pointer',transition:'opacity 0.2s'}}
                   onMouseEnter={e=>e.currentTarget.style.opacity='0.9'}
                   onMouseLeave={e=>e.currentTarget.style.opacity='1'}>
                   Envoyer le message →
@@ -165,14 +165,14 @@ export default function ContactPage() {
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'1px',background:'#eee',border:'1px solid #eee'}}>
           {[
             {icon:'📍',title:'Notre adresse',desc:'Stèle Mermoz, Dakar\nSénégal'},
-            {icon:'📞',title:'Appelez-nous',desc:'+221 XX XXX XX XX\nLun – Ven : 8h – 18h'},
-            {icon:'✉️',title:'Écrivez-nous',desc:'contact@scivictorine.sn\nRéponse sous 24h'},
+            {icon:'📞',title:'Appelez-nous',desc:'78 210 90 90 / 33 824 66 68\nLun – Ven : 8h – 17h'},
+            {icon:'✉️',title:'Écrivez-nous',desc:'diallohawa@ceris.sn\nRéponse sous 24h'},
           ].map((item,i)=>(
             <div key={i} style={{background:'#fff',padding:'2.5rem',textAlign:'center'}}>
               <div style={{fontSize:'28px',marginBottom:'1rem'}}>{item.icon}</div>
-              <div style={{fontSize:'13px',fontWeight:'900',color:'#1a1a1a',letterSpacing:'1px',textTransform:'uppercase',marginBottom:'10px'}}>{item.title}</div>
+              <div style={{fontSize:'15px',fontWeight:'900',color:'#1a1a1a',letterSpacing:'1px',textTransform:'uppercase',marginBottom:'10px'}}>{item.title}</div>
               <div style={{width:'24px',height:'2px',background:'#c0392b',margin:'0 auto 12px'}}/>
-              <div style={{fontSize:'13px',color:'#888',lineHeight:'1.9',whiteSpace:'pre-line'}}>{item.desc}</div>
+              <div style={{fontSize:'15px',color:'#888',lineHeight:'1.9',whiteSpace:'pre-line'}}>{item.desc}</div>
             </div>
           ))}
         </div>
@@ -181,12 +181,12 @@ export default function ContactPage() {
       {/* CTA */}
       <section style={{background:'#c0392b',padding:'4rem',textAlign:'center'}}>
         <h2 style={{fontSize:'28px',fontWeight:'900',color:'#fff',marginBottom:'12px'}}>Vous préférez être rappelé ?</h2>
-        <p style={{fontSize:'14px',color:'rgba(255,255,255,0.75)',marginBottom:'2rem'}}>Laissez-nous vos coordonnées et nous vous recontactons dans les plus brefs délais.</p>
+        <p style={{fontSize:'16px',color:'rgba(255,255,255,0.75)',marginBottom:'2rem'}}>Laissez-nous vos coordonnées et nous vous recontactons dans les plus brefs délais.</p>
         <a href={whatsappLink} target="_blank" rel="noopener noreferrer"
-          style={{display:'inline-flex',alignItems:'center',gap:'10px',background:'#25D366',color:'#fff',padding:'14px 32px',fontSize:'12px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',textDecoration:'none',margin:'0 8px'}}>
+          style={{display:'inline-flex',alignItems:'center',gap:'10px',background:'#25D366',color:'#fff',padding:'14px 32px',fontSize:'14px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',textDecoration:'none',margin:'0 8px'}}>
           💬 WhatsApp
         </a>
-        <button style={{background:'#fff',color:'#c0392b',border:'none',fontSize:'12px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'14px 32px',cursor:'pointer',margin:'0 8px'}}>
+        <button style={{background:'#fff',color:'#c0392b',border:'none',fontSize:'14px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'14px 32px',cursor:'pointer',margin:'0 8px'}}>
           📞 Nous appeler
         </button>
       </section>

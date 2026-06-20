@@ -16,7 +16,10 @@ const photos = [
   '/images/projet/photo-10.jpg',
   '/images/projet/photo-11.jpg',
   '/images/projet/photo-12.jpg',
-  '/images/projet/photo-13.jpg'
+  '/images/projet/photo-13.jpg',
+  '/images/projet/photo-14.jpg',
+  '/images/projet/photo-15.jpg',
+  '/images/projet/photo-16.jpg'
 ]
 
 export default function ProjectFeature() {
@@ -32,12 +35,12 @@ export default function ProjectFeature() {
   const next = () => setLightbox(l => (l + 1) % photos.length)
 
   const stats = [
-    { label: 'Superficie', value: '150', unit: 'm²' },
+    { label: 'Superficie', value: '240', unit: 'm²' },
     { label: 'Appartements', value: '7', unit: 'unités' },
     { label: 'Étages', value: 'R+7', unit: '' },
-    { label: 'Livraison', value: '2025', unit: 'T1' },
-    { label: 'Prix à partir de', value: '200M', unit: 'FCFA' },
-    { label: 'Disponibles', value: '1', unit: 'restant' },
+    { label: 'Livraison', value: '2025', unit: '' },
+    { label: 'Prix à partir de', value: '195M', unit: 'FCFA' },
+    { label: 'Disponibles', value: '5', unit: 'restants' },
   ]
 
   return (
@@ -89,7 +92,7 @@ export default function ProjectFeature() {
 
                   {index === 2 && (
                     <div className="more">
-                      <strong>+9</strong>
+                      <strong>+{photos.length - 4}</strong>
                       <span>Voir toutes les photos</span>
                     </div>
                   )}
@@ -259,7 +262,7 @@ export default function ProjectFeature() {
           display: block;
           margin-bottom: 0.7rem;
           color: #c0392b;
-          font-size: 11px;
+          font-size: 15px;
           font-weight: 800;
           letter-spacing: 4px;
           text-transform: uppercase;
@@ -268,7 +271,7 @@ export default function ProjectFeature() {
         h2 {
           margin: 0;
           color: #151515;
-          font-size: clamp(2rem, 4vw, 3.2rem);
+          font-size: clamp(2.4rem, 4.8vw, 3.84rem);
           font-weight: 800;
           letter-spacing: -1px;
         }
@@ -277,7 +280,7 @@ export default function ProjectFeature() {
           background: #c0392b;
           color: #fff;
           padding: 12px 26px;
-          font-size: 10px;
+          font-size: 14px;
           font-weight: 700;
           letter-spacing: 3px;
           text-transform: uppercase;
@@ -331,7 +334,7 @@ export default function ProjectFeature() {
           left: 1.6rem;
           bottom: 1.4rem;
           color: #fff;
-          font-size: 13px;
+          font-size: 18px;
           font-weight: 800;
           letter-spacing: 3px;
           text-transform: uppercase;
@@ -352,7 +355,7 @@ export default function ProjectFeature() {
           backdrop-filter: blur(12px);
           color: #fff;
           cursor: pointer;
-          font-size: 10px;
+          font-size: 14px;
           font-weight: 800;
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -373,7 +376,7 @@ export default function ProjectFeature() {
           border-radius: 50%;
           background: #c0392b;
           color: white;
-          font-size: 16px;
+          font-size: 19px;
           padding-left: 3px;
         }
 
@@ -420,13 +423,13 @@ export default function ProjectFeature() {
         }
 
         .more strong {
-          font-size: 30px;
+          font-size: 36px;
           font-weight: 400;
         }
 
         .more span {
           margin-top: 4px;
-          font-size: 9px;
+          font-size: 13px;
           letter-spacing: 2px;
           text-transform: uppercase;
         }
@@ -450,7 +453,7 @@ export default function ProjectFeature() {
           border-radius: 999px;
           background: #fff0ef;
           color: #c0392b;
-          font-size: 10px;
+          font-size: 14px;
           font-weight: 800;
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -459,7 +462,7 @@ export default function ProjectFeature() {
         .info-card h3 {
           margin: 0;
           color: #151515;
-          font-size: 30px;
+          font-size: 36px;
           font-weight: 800;
           letter-spacing: -0.5px;
         }
@@ -467,7 +470,7 @@ export default function ProjectFeature() {
         .location {
           margin: 0.6rem 0 1.4rem;
           color: #c0392b;
-          font-size: 11px;
+          font-size: 15px;
           font-weight: 700;
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -478,7 +481,7 @@ export default function ProjectFeature() {
           padding-left: 1rem;
           border-left: 3px solid #e0b0ad;
           color: #696969;
-          font-size: 14px;
+          font-size: 19px;
           line-height: 1.9;
         }
 
@@ -500,20 +503,20 @@ export default function ProjectFeature() {
           display: block;
           margin-bottom: 6px;
           color: #a9a9a9;
-          font-size: 8px;
+          font-size: 12px;
           letter-spacing: 2px;
           text-transform: uppercase;
         }
 
         .stat strong {
           color: #151515;
-          font-size: 18px;
+          font-size: 24px;
           font-weight: 700;
         }
 
         .stat small {
           color: #c0392b;
-          font-size: 10px;
+          font-size: 14px;
           font-weight: 700;
         }
 
@@ -542,7 +545,7 @@ export default function ProjectFeature() {
   color: #c0392b;
   text-decoration: none;
 
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 800;
 
   letter-spacing: 2px;
@@ -571,7 +574,7 @@ export default function ProjectFeature() {
           border: none;
           text-decoration: none;
           color: #fff;
-          font-size: 10px;
+          font-size: 14px;
           font-weight: 800;
           letter-spacing: 2px;
           text-transform: uppercase;
@@ -631,7 +634,7 @@ export default function ProjectFeature() {
           border-radius: 50%;
           background: rgba(255, 255, 255, 0.1);
           border: 1px solid rgba(255, 255, 255, 0.2);
-          font-size: 18px;
+          font-size: 22px;
         }
 
         .prev {
@@ -646,7 +649,7 @@ export default function ProjectFeature() {
           top: 1.5rem;
           right: 1.5rem;
           background: transparent;
-          font-size: 28px;
+          font-size: 34px;
         }
 
         .counter {
@@ -655,7 +658,7 @@ export default function ProjectFeature() {
           left: 50%;
           transform: translateX(-50%);
           color: rgba(255, 255, 255, 0.55);
-          font-size: 12px;
+          font-size: 16px;
           letter-spacing: 2px;
         }
 

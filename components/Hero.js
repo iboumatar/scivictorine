@@ -59,7 +59,7 @@ export default function Hero() {
   const goTo = (n) => setCur((n + slides.length) % slides.length)
 
   return (
-    <section style={{ position: 'relative', height: '580px', overflow: 'hidden' }}>
+    <section style={{ position: 'relative', minHeight: 'calc(100vh - 96px)', height: 'calc(100vh - 96px)', overflow: 'hidden' }}>
       {slides.map((slide, i) => (
         <div key={i} style={{
           position: 'absolute', inset: 0,
@@ -87,7 +87,7 @@ export default function Hero() {
               filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.5))'
             }} />
             <div style={{
-  fontSize: '13px', letterSpacing: '4px',
+  fontSize:'18px', letterSpacing: '4px',
   textTransform: 'uppercase', color: '#fff',
   marginBottom: '1rem', fontWeight: '900',
   background: '#c0392b',
@@ -96,9 +96,9 @@ export default function Hero() {
 }}>
   {slide.badge}
 </div>
-◊
+
             <h1 style={{
-              fontSize: '38px', fontWeight: '900', color: '#fff',
+              fontSize:'46px', fontWeight: '900', color: '#fff',
               letterSpacing: '2px', lineHeight: '1.2', marginBottom: '1rem',
               textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9)',
             }}>
@@ -107,7 +107,7 @@ export default function Hero() {
               {slide.suite ? ` ${slide.suite}` : ''}
             </h1>
             <p style={{
-              fontSize: '14px', color: '#fff',
+              fontSize:'19px', color: '#fff',
               lineHeight: '1.9', marginBottom: '2rem',
               textShadow: '0 1px 6px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.8)',
               fontWeight: '700',
@@ -117,7 +117,7 @@ export default function Hero() {
             <div style={{ display: 'flex', gap: '1rem' }}>
               <button
                 onClick={() => router.push(slide.btn1.href)}
-                style={{ background: '#c0392b', color: '#fff', border: 'none', padding: '13px 30px', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer', transition: 'opacity 0.2s', boxShadow: '0 4px 15px rgba(0,0,0,0.4)' }}
+                style={{ background: '#c0392b', color: '#fff', border: 'none', padding: '13px 30px', fontSize:'15px', letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer', transition: 'opacity 0.2s', boxShadow: '0 4px 15px rgba(0,0,0,0.4)' }}
                 onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
                 onMouseLeave={e => e.currentTarget.style.opacity = '1'}
               >
@@ -125,7 +125,7 @@ export default function Hero() {
               </button>
               <button
                 onClick={() => router.push(slide.btn2.href)}
-                style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.8)', padding: '13px 30px', fontSize: '11px', letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }}
+                style={{ background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.8)', padding: '13px 30px', fontSize:'15px', letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = '#c0392b'; e.currentTarget.style.background = '#c0392b' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.8)'; e.currentTarget.style.background = 'transparent' }}
               >
@@ -139,7 +139,7 @@ export default function Hero() {
       {/* Flèche gauche */}
       <button
         onClick={() => goTo(cur - 1)}
-        style={{ position: 'absolute', left: '2rem', top: '40%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', width: '46px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '16px', transition: 'all 0.2s' }}
+        style={{ position: 'absolute', left: '2rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', width: '46px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize:'19px', transition: 'all 0.2s' }}
         onMouseEnter={e => { e.currentTarget.style.background = '#c0392b'; e.currentTarget.style.borderColor = '#c0392b' }}
         onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)' }}
       >←</button>
@@ -147,7 +147,7 @@ export default function Hero() {
       {/* Flèche droite */}
       <button
         onClick={() => goTo(cur + 1)}
-        style={{ position: 'absolute', right: '2rem', top: '40%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', width: '46px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '16px', transition: 'all 0.2s' }}
+        style={{ position: 'absolute', right: '2rem', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.3)', color: '#fff', width: '46px', height: '46px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize:'19px', transition: 'all 0.2s' }}
         onMouseEnter={e => { e.currentTarget.style.background = '#c0392b'; e.currentTarget.style.borderColor = '#c0392b' }}
         onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)' }}
       >→</button>
@@ -164,7 +164,7 @@ export default function Hero() {
       </div>
 
       {/* Compteur */}
-      <div style={{ position: 'absolute', bottom: '2rem', right: '2rem', fontSize: '11px', color: 'rgba(255,255,255,0.8)', letterSpacing: '3px', zIndex: 10 }}>
+      <div style={{ position: 'absolute', bottom: '2rem', right: '2rem', fontSize:'15px', color: 'rgba(255,255,255,0.8)', letterSpacing: '3px', zIndex: 10 }}>
         <span style={{ color: '#e74c3c' }}>{String(cur + 1).padStart(2, '0')}</span> / {String(slides.length).padStart(2, '0')}
       </div>
     </section>

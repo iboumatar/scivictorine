@@ -39,7 +39,7 @@ function Counter({ target, suffix }) {
   }, [target])
 
   return (
-    <span ref={ref} style={{fontSize:'36px',fontWeight:'500',color:'#fff'}}>
+    <span ref={ref} style={{fontSize:'43px',fontWeight:'500',color:'#fff'}}>
       {count}{suffix}
     </span>
   )
@@ -51,7 +51,7 @@ export default function Stats() {
       {stats.map((s,i)=>(
         <div key={i} style={{padding:'2rem',textAlign:'center',borderRight:i < stats.length-1 ? '1px solid rgba(255,255,255,0.15)' : 'none'}}>
           <Counter target={s.num} suffix={s.suffix} />
-          <div style={{fontSize:'10px',color:'rgba(255,255,255,0.75)',letterSpacing:'2px',textTransform:'uppercase',marginTop:'6px'}}>{s.label}</div>
+          <div style={{fontSize:'14px',color:'rgba(255,255,255,0.75)',letterSpacing:'2px',textTransform:'uppercase',marginTop:'6px'}}>{s.label}</div>
         </div>
       ))}
     </div>

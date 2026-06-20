@@ -154,7 +154,7 @@ export default function Services() {
 
         .services-header span {
           display: block;
-          font-size: 11px;
+          font-size: 15px;
           font-weight: 800;
           letter-spacing: 4px;
           text-transform: uppercase;
@@ -164,7 +164,7 @@ export default function Services() {
 
         .services-header h2 {
           margin: 0;
-          font-size: clamp(2rem, 4vw, 3.2rem);
+          font-size: clamp(2.4rem, 4.8vw, 3.84rem);
           color: #171717;
           font-weight: 900;
           letter-spacing: -1px;
@@ -174,7 +174,7 @@ export default function Services() {
           max-width: 620px;
           margin: 1rem auto 0;
           color: #6f3b35;
-          font-size: 15px;
+          font-size: 20px;
           line-height: 1.8;
         }
 
@@ -267,7 +267,7 @@ export default function Services() {
           border: 1px solid rgba(255, 255, 255, 0.75);
 
           color: #c0392b;
-          font-size: 28px;
+          font-size: 34px;
 
           margin-bottom: 1.6rem;
 
@@ -283,7 +283,7 @@ export default function Services() {
         .service-card h3 {
           margin: 0 0 0.9rem;
           color: #221211;
-          font-size: 16px;
+          font-size: 19px;
           font-weight: 900;
           letter-spacing: 0.5px;
           text-transform: uppercase;
@@ -293,7 +293,7 @@ export default function Services() {
         .service-card p {
           margin: 0;
           color: #76524e;
-          font-size: 13.5px;
+          font-size: 18px;
           line-height: 1.75;
           transition: color 0.35s ease;
         }
@@ -310,7 +310,7 @@ export default function Services() {
 
           color: #c0392b;
 
-          font-size: 10px;
+          font-size: 14px;
           font-weight: 800;
 
           letter-spacing: 2px;

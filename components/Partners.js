@@ -49,14 +49,14 @@ export default function Partners() {
   return (
     <section style={{padding:'5rem 3rem',background:'#fff',borderTop:'1px solid #eee'}}>
       <div style={{textAlign:'center',marginBottom:'3rem',position:'relative',overflow:'hidden'}}>
-  <div style={{fontSize:'80px',fontWeight:'900',color:'#f0f0f0',letterSpacing:'8px',textTransform:'uppercase',lineHeight:1,marginBottom:'-15px',userSelect:'none'}}>
+  <div style={{fontSize:'96px',fontWeight:'900',color:'#f0f0f0',letterSpacing:'8px',textTransform:'uppercase',lineHeight:1,marginBottom:'-15px',userSelect:'none'}}>
     PARTENAIRES
   </div>
-  <h2 style={{fontSize:'24px',fontWeight:'700',color:'#1a1a1a',position:'relative',zIndex:1,marginBottom:'16px'}}>
+  <h2 style={{fontSize:'29px',fontWeight:'700',color:'#1a1a1a',position:'relative',zIndex:1,marginBottom:'16px'}}>
     Nous collaborons avec les <span style={{color:'#c0392b'}}>meilleurs</span>
   </h2>
   <div style={{width:'40px',height:'2px',background:'#c0392b',margin:'0 auto 16px'}}/>
-  <p style={{fontSize:'13px',color:'#aaa',maxWidth:'420px',margin:'0 auto',lineHeight:'1.8',letterSpacing:'2px',textTransform:'uppercase'}}>
+  <p style={{fontSize:'18px',color:'#aaa',maxWidth:'420px',margin:'0 auto',lineHeight:'1.8',letterSpacing:'2px',textTransform:'uppercase'}}>
     Banque · Assurance · Architecture · Bureau d'études
   </p>
 </div>
@@ -68,7 +68,7 @@ export default function Partners() {
           onClick={prev}
           onMouseEnter={()=>setHovPrev(true)}
           onMouseLeave={()=>setHovPrev(false)}
-          style={{width:'40px',height:'40px',borderRadius:'50%',border:`1px solid ${hovPrev?'#c0392b':'#ddd'}`,background:hovPrev?'#fff0ef':'#fff',color:hovPrev?'#c0392b':'#999',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',flexShrink:0,fontSize:'14px',transition:'all 0.2s'}}>
+          style={{width:'40px',height:'40px',borderRadius:'50%',border:`1px solid ${hovPrev?'#c0392b':'#ddd'}`,background:hovPrev?'#fff0ef':'#fff',color:hovPrev?'#c0392b':'#999',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',flexShrink:0,fontSize:'17px',transition:'all 0.2s'}}>
           ←
         </button>
 
@@ -84,7 +84,7 @@ export default function Partners() {
                 <div style={{height:'70px',display:'flex',alignItems:'center',justifyContent:'center',width:'100%'}}>
                   <img src={p.src} alt={p.name} style={{maxWidth:'140px',maxHeight:'60px',objectFit:'contain'}}/>
                 </div>
-                <div style={{fontSize:'11px',color:'#aaa',letterSpacing:'1px',textAlign:'center'}}>{p.name}</div>
+                <div style={{fontSize:'15px',color:'#aaa',letterSpacing:'1px',textAlign:'center'}}>{p.name}</div>
               </div>
             ))}
           </div>
@@ -95,7 +95,7 @@ export default function Partners() {
           onClick={next}
           onMouseEnter={()=>setHovNext(true)}
           onMouseLeave={()=>setHovNext(false)}
-          style={{width:'40px',height:'40px',borderRadius:'50%',border:`1px solid ${hovNext?'#c0392b':'#ddd'}`,background:hovNext?'#fff0ef':'#fff',color:hovNext?'#c0392b':'#999',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',flexShrink:0,fontSize:'14px',transition:'all 0.2s'}}>
+          style={{width:'40px',height:'40px',borderRadius:'50%',border:`1px solid ${hovNext?'#c0392b':'#ddd'}`,background:hovNext?'#fff0ef':'#fff',color:hovNext?'#c0392b':'#999',display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',flexShrink:0,fontSize:'17px',transition:'all 0.2s'}}>
           →
         </button>
 

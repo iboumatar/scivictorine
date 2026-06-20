@@ -14,14 +14,13 @@ export default function ServicesPage() {
     <main>
 
       {/* HERO */}
-      <section style={{position:'relative',height:'360px',overflow:'hidden'}}>
-        <div style={{position:'absolute',inset:0,backgroundImage:"url('/images/services/hero-services.jpg')",backgroundSize:'cover',backgroundPosition:'center 30%',filter:'brightness(0.55)'}}/>
-        <div style={{position:'absolute',inset:0,background:'linear-gradient(to right, rgba(192,57,43,0.7), rgba(0,0,0,0.2))'}}/>
+      <section style={{position:'relative',height:'440px',overflow:'hidden'}}>
+        <div style={{position:'absolute',inset:'-5%',backgroundImage:"url('/images/services/hero-services.jpg')",backgroundSize:'110%',backgroundPosition:'center 30%'}}/>
         <div style={{position:'relative',zIndex:2,height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:'0 4rem'}}>
-          <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'rgba(255,255,255,0.6)',marginBottom:'12px'}}>SCI Victorine Immo</div>
+          <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#fff',marginBottom:'12px',textShadow:'0 1px 6px rgba(0,0,0,0.8)'}}>SCI Victorine Immo</div>
           <div style={{width:'40px',height:'3px',background:'#c0392b',marginBottom:'16px'}}/>
-          <h1 style={{fontSize:'48px',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px'}}>Nos <span style={{color:'#e74c3c'}}>Services</span></h1>
-          <p style={{fontSize:'15px',color:'rgba(255,255,255,0.7)',maxWidth:'500px',lineHeight:'1.8'}}>Des solutions immobilières complètes et personnalisées pour tous vos projets au Sénégal.</p>
+          <h1 style={{fontSize:'58px',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px',textShadow:'0 2px 12px rgba(0,0,0,0.8)'}}>Nos <span style={{color:'#e74c3c'}}>Services</span></h1>
+          <p style={{fontSize:'20px',color:'#fff',maxWidth:'500px',lineHeight:'1.8',textShadow:'0 1px 6px rgba(0,0,0,0.9)'}}>Des solutions immobilières complètes et personnalisées pour tous vos projets au Sénégal.</p>
         </div>
       </section>
 
@@ -42,7 +41,7 @@ export default function ServicesPage() {
         {['Construction','Appartements','Terrains','Lotissement','Financement','Fiscal'].map((item,i)=>(
           <a key={i} href={`#service-${i+1}`} style={{
             padding:'1.2rem 1.5rem',
-            fontSize:'11px',
+            fontSize:'15px',
             fontWeight:'700',
             letterSpacing:'2px',
             textTransform:'uppercase',
@@ -64,21 +63,21 @@ export default function ServicesPage() {
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
           <img src="/images/services/construction.jpg" alt="Construction" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
           <div>
-            <div style={{fontSize:'80px',fontWeight:'900',color:'#f5f5f5',lineHeight:1,marginBottom:'-20px'}}>01</div>
-            <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Notre expertise</div>
-            <h2 style={{fontSize:'28px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Construction d'immeubles</h2>
+            <div style={{fontSize:'96px',fontWeight:'900',color:'#f5f5f5',lineHeight:1,marginBottom:'-20px'}}>01</div>
+            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Notre expertise</div>
+            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Construction d'immeubles</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>SCI Victorine Immo prend en charge la conception et la réalisation complète de vos projets de construction. De l'étude de faisabilité à la livraison, nous assurons un suivi rigoureux à chaque étape.</p>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Nous travaillons avec des architectes et des entreprises BTP de référence pour garantir des constructions aux standards internationaux.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>SCI Victorine Immo prend en charge la conception et la réalisation complète de vos projets de construction. De l'étude de faisabilité à la livraison, nous assurons un suivi rigoureux à chaque étape.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Nous travaillons avec des architectes et des entreprises BTP de référence pour garantir des constructions aux standards internationaux.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
               {['Études de faisabilité et plans architecturaux','Sélection et coordination des entreprises BTP','Suivi de chantier et contrôle qualité','Respect des délais et du budget'].map((p,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
                   <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
-                  <span style={{fontSize:'13px',color:'#444'}}>{p}</span>
+                  <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
                 </div>
               ))}
             </div>
-            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'11px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Demander un devis</button>
+            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Demander un devis</button>
           </div>
         </div>
       </section>
@@ -89,21 +88,21 @@ export default function ServicesPage() {
       <section id="service-2" style={{padding:'5rem 4rem',background:'#fafafa'}}>
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
           <div>
-            <div style={{fontSize:'80px',fontWeight:'900',color:'#f0f0f0',lineHeight:1,marginBottom:'-20px'}}>02</div>
-            <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Résidentiel</div>
-            <h2 style={{fontSize:'28px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Vente d'appartements</h2>
+            <div style={{fontSize:'96px',fontWeight:'900',color:'#f0f0f0',lineHeight:1,marginBottom:'-20px'}}>02</div>
+            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Résidentiel</div>
+            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Vente d'appartements</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Nous proposons une large gamme d'appartements modernes et fonctionnels dans les quartiers les plus prisés de Dakar et des principales villes du Sénégal.</p>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Chaque appartement est conçu pour offrir confort, qualité et praticité, avec des prestations adaptées à tous les profils et budgets.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Nous proposons une large gamme d'appartements modernes et fonctionnels dans les quartiers les plus prisés de Dakar et des principales villes du Sénégal.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Chaque appartement est conçu pour offrir confort, qualité et praticité, avec des prestations adaptées à tous les profils et budgets.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
               {['Studios, F2, F3, F4 et duplex disponibles','Finitions premium et matériaux de qualité','Localisation dans des quartiers stratégiques','Accompagnement pour le financement bancaire'].map((p,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
                   <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
-                  <span style={{fontSize:'13px',color:'#444'}}>{p}</span>
+                  <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
                 </div>
               ))}
             </div>
-            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'11px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Voir les biens</button>
+            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Voir les biens</button>
           </div>
           <img src="/images/services/appartement.jpg" alt="Appartements" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
         </div>
@@ -116,21 +115,21 @@ export default function ServicesPage() {
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
           <img src="/images/services/terrain.jpg" alt="Terrains" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
           <div>
-            <div style={{fontSize:'80px',fontWeight:'900',color:'#f5f5f5',lineHeight:1,marginBottom:'-20px'}}>03</div>
-            <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Foncier</div>
-            <h2 style={{fontSize:'28px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Vente de terrains</h2>
+            <div style={{fontSize:'96px',fontWeight:'900',color:'#f5f5f5',lineHeight:1,marginBottom:'-20px'}}>03</div>
+            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Foncier</div>
+            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Vente de terrains</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Nous disposons d'un large portefeuille de terrains viabilisés dans les zones à fort potentiel de croissance au Sénégal. Chaque terrain est soigneusement sélectionné pour sa valeur et son accessibilité.</p>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Tous nos terrains sont sécurisés juridiquement avec des titres fonciers en règle pour vous garantir une transaction sans risque.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Nous disposons d'un large portefeuille de terrains viabilisés dans les zones à fort potentiel de croissance au Sénégal. Chaque terrain est soigneusement sélectionné pour sa valeur et son accessibilité.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Tous nos terrains sont sécurisés juridiquement avec des titres fonciers en règle pour vous garantir une transaction sans risque.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
               {['Terrains viabilisés et titrés','Zones résidentielles et commerciales','Sécurisation juridique complète','Accompagnement notarial inclus'].map((p,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
                   <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
-                  <span style={{fontSize:'13px',color:'#444'}}>{p}</span>
+                  <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
                 </div>
               ))}
             </div>
-            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'11px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Voir les terrains</button>
+            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Voir les terrains</button>
           </div>
         </div>
       </section>
@@ -141,21 +140,21 @@ export default function ServicesPage() {
       <section id="service-4" style={{padding:'5rem 4rem',background:'#fafafa'}}>
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
           <div>
-            <div style={{fontSize:'80px',fontWeight:'900',color:'#f0f0f0',lineHeight:1,marginBottom:'-20px'}}>04</div>
-            <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Aménagement</div>
-            <h2 style={{fontSize:'28px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Lotissement</h2>
+            <div style={{fontSize:'96px',fontWeight:'900',color:'#f0f0f0',lineHeight:1,marginBottom:'-20px'}}>04</div>
+            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Aménagement</div>
+            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Lotissement</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>SCI Victorine Immo réalise des opérations de lotissement conformes aux normes urbanistiques en vigueur. Nous prenons en charge l'ensemble du processus, de l'acquisition foncière à la viabilisation des lots.</p>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Nos lotissements sont conçus pour offrir un cadre de vie agréable avec toutes les commodités nécessaires.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>SCI Victorine Immo réalise des opérations de lotissement conformes aux normes urbanistiques en vigueur. Nous prenons en charge l'ensemble du processus, de l'acquisition foncière à la viabilisation des lots.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Nos lotissements sont conçus pour offrir un cadre de vie agréable avec toutes les commodités nécessaires.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
               {["Études topographiques et urbanistiques","Viabilisation (eau, électricité, voirie)","Conformité aux normes d'urbanisme","Titres fonciers individuels pour chaque lot"].map((p,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
                   <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
-                  <span style={{fontSize:'13px',color:'#444'}}>{p}</span>
+                  <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
                 </div>
               ))}
             </div>
-            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'11px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>En savoir plus</button>
+            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>En savoir plus</button>
           </div>
           <img src="/images/services/lotissement.jpg" alt="Lotissement" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
         </div>
@@ -168,21 +167,21 @@ export default function ServicesPage() {
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
           <img src="/images/services/financement.jpg" alt="Financement" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
           <div>
-            <div style={{fontSize:'80px',fontWeight:'900',color:'#f5f5f5',lineHeight:1,marginBottom:'-20px'}}>05</div>
-            <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Accompagnement</div>
-            <h2 style={{fontSize:'28px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Recherche de financement</h2>
+            <div style={{fontSize:'96px',fontWeight:'900',color:'#f5f5f5',lineHeight:1,marginBottom:'-20px'}}>05</div>
+            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Accompagnement</div>
+            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Recherche de financement</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Nous accompagnons nos clients dans la recherche et le montage de leurs dossiers de financement immobilier. Grâce à notre réseau de partenaires bancaires, nous facilitons l'accès au crédit.</p>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Notre équipe vous guide à travers les différentes options de financement disponibles pour trouver la solution la plus adaptée à votre situation.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Nous accompagnons nos clients dans la recherche et le montage de leurs dossiers de financement immobilier. Grâce à notre réseau de partenaires bancaires, nous facilitons l'accès au crédit.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Notre équipe vous guide à travers les différentes options de financement disponibles pour trouver la solution la plus adaptée à votre situation.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
               {["Analyse de votre capacité de financement","Montage et optimisation du dossier bancaire","Mise en relation avec nos partenaires bancaires","Suivi jusqu'à l'obtention du prêt"].map((p,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
                   <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
-                  <span style={{fontSize:'13px',color:'#444'}}>{p}</span>
+                  <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
                 </div>
               ))}
             </div>
-            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'11px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Prendre RDV</button>
+            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Prendre RDV</button>
           </div>
         </div>
       </section>
@@ -193,21 +192,21 @@ export default function ServicesPage() {
       <section id="service-6" style={{padding:'5rem 4rem',background:'#fafafa'}}>
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
           <div>
-            <div style={{fontSize:'80px',fontWeight:'900',color:'#f0f0f0',lineHeight:1,marginBottom:'-20px'}}>06</div>
-            <div style={{fontSize:'10px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Juridique & Fiscal</div>
-            <h2 style={{fontSize:'28px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Encadrement fiscal</h2>
+            <div style={{fontSize:'96px',fontWeight:'900',color:'#f0f0f0',lineHeight:1,marginBottom:'-20px'}}>06</div>
+            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Juridique & Fiscal</div>
+            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Encadrement fiscal</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Notre service d'encadrement fiscal vous accompagne dans la gestion et l'optimisation fiscale de vos investissements immobiliers. Nous vous aidons à comprendre et respecter vos obligations fiscales.</p>
-            <p style={{fontSize:'14px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>En partenariat avec des notaires et experts fiscaux, nous sécurisons chaque transaction pour vous offrir une tranquillité d'esprit totale.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Notre service d'encadrement fiscal vous accompagne dans la gestion et l'optimisation fiscale de vos investissements immobiliers. Nous vous aidons à comprendre et respecter vos obligations fiscales.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>En partenariat avec des notaires et experts fiscaux, nous sécurisons chaque transaction pour vous offrir une tranquillité d'esprit totale.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
               {["Conseil en optimisation fiscale immobilière","Accompagnement dans les démarches administratives","Sécurisation juridique des transactions","Partenariat avec notaires agréés"].map((p,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
                   <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
-                  <span style={{fontSize:'13px',color:'#444'}}>{p}</span>
+                  <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
                 </div>
               ))}
             </div>
-            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'11px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Nous contacter</button>
+            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Nous contacter</button>
           </div>
           <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&q=80" alt="Fiscal" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
         </div>
@@ -215,9 +214,9 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section style={{background:'#c0392b',padding:'4rem',textAlign:'center'}}>
-        <h2 style={{fontSize:'28px',fontWeight:'900',color:'#fff',marginBottom:'12px'}}>Vous avez un projet immobilier ?</h2>
-        <p style={{fontSize:'14px',color:'rgba(255,255,255,0.75)',marginBottom:'2rem'}}>Contactez-nous pour un accompagnement personnalisé et gratuit.</p>
-        <button style={{background:'#fff',color:'#c0392b',border:'none',fontSize:'11px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'14px 32px',cursor:'pointer'}}>Prendre rendez-vous</button>
+        <h2 style={{fontSize:'34px',fontWeight:'900',color:'#fff',marginBottom:'12px'}}>Vous avez un projet immobilier ?</h2>
+        <p style={{fontSize:'19px',color:'rgba(255,255,255,0.75)',marginBottom:'2rem'}}>Contactez-nous pour un accompagnement personnalisé et gratuit.</p>
+        <button style={{background:'#fff',color:'#c0392b',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'14px 32px',cursor:'pointer'}}>Prendre rendez-vous</button>
       </section>
 
     </main>

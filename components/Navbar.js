@@ -9,7 +9,7 @@ export default function Navbar() {
   const linkStyle = (id) => ({
     color: hovered === id ? '#c0392b' : '#666',
     textDecoration: 'none',
-    fontSize: '11px',
+    fontSize:'15px',
     letterSpacing: '2px',
     textTransform: 'uppercase',
     fontWeight: '900',
@@ -72,7 +72,7 @@ export default function Navbar() {
             color: hovContact ? '#c0392b' : '#fff',
             border: '2px solid #c0392b',
             padding: '10px 22px',
-            fontSize: '10px',
+            fontSize:'14px',
             fontWeight: '700',
             letterSpacing: '2px',
             textTransform: 'uppercase',
