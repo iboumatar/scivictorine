@@ -248,10 +248,14 @@ export default function ProjetsPage() {
       {showVideo && (
         <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.95)',zIndex:1000,display:'flex',alignItems:'center',justifyContent:'center'}}
           onClick={()=>setShowVideo(false)}>
-          <div style={{width:'80vw',maxWidth:'900px',aspectRatio:'16/9',background:'#111',display:'flex',alignItems:'center',justifyContent:'center'}}
-            onClick={e=>e.stopPropagation()}>
-            <p style={{color:'#666',fontSize:'19px',letterSpacing:'2px',textTransform:'uppercase'}}>Vidéo de présentation</p>
-          </div>
+          <video
+            controls
+            autoPlay
+            style={{width:'80vw',maxWidth:'900px',aspectRatio:'16/9'}}
+            onClick={e=>e.stopPropagation()}
+          >
+            <source src="/videos/residence-victorine.mp4" type="video/mp4" />
+          </video>
           <button onClick={()=>setShowVideo(false)}
             style={{position:'absolute',top:'1.5rem',right:'1.5rem',background:'transparent',border:'none',color:'#fff',fontSize:'34px',cursor:'pointer'}}>✕</button>
         </div>

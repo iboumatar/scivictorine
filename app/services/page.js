@@ -38,7 +38,7 @@ export default function ServicesPage() {
         boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.2)' : '0 2px 10px rgba(0,0,0,0.06)',
         transition:'all 0.3s ease'
       }}>
-        {['Construction','Appartements','Terrains','Lotissement','Financement','Fiscal'].map((item,i)=>(
+        {['Construction','Appartements','Terrains & Lotissement','Financement','Fiscal','Conseil juridique'].map((item,i)=>(
           <a key={i} href={`#service-${i+1}`} style={{
             padding:'1.2rem 1.5rem',
             fontSize:'15px',
@@ -113,16 +113,16 @@ export default function ServicesPage() {
       {/* SERVICE 3 */}
       <section id="service-3" style={{padding:'5rem 4rem',background:'#fff'}}>
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
-          <img src="/images/services/terrain.jpg" alt="Terrains" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
+          <img src="/images/services/terrain.jpg" alt="Terrains & Lotissement" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
           <div>
             <div style={{fontSize:'96px',fontWeight:'900',color:'#f5f5f5',lineHeight:1,marginBottom:'-20px'}}>03</div>
-            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Foncier</div>
-            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Vente de terrains</h2>
+            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Foncier & Aménagement</div>
+            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Terrains & Lotissement</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
-            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Nous disposons d'un large portefeuille de terrains viabilisés dans les zones à fort potentiel de croissance au Sénégal. Chaque terrain est soigneusement sélectionné pour sa valeur et son accessibilité.</p>
-            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Tous nos terrains sont sécurisés juridiquement avec des titres fonciers en règle pour vous garantir une transaction sans risque.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Nous disposons d'un large portefeuille de terrains viabilisés dans les zones à fort potentiel de croissance au Sénégal, et réalisons des opérations de lotissement conformes aux normes urbanistiques en vigueur, de l'acquisition foncière à la viabilisation des lots.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Tous nos terrains et lots sont sécurisés juridiquement avec des titres fonciers en règle pour vous garantir une transaction sans risque.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
-              {['Terrains viabilisés et titrés','Zones résidentielles et commerciales','Sécurisation juridique complète','Accompagnement notarial inclus'].map((p,i)=>(
+              {['Terrains viabilisés et titrés','Lotissements conformes aux normes d\'urbanisme','Sécurisation juridique complète','Accompagnement notarial inclus'].map((p,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
                   <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
                   <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
@@ -141,33 +141,6 @@ export default function ServicesPage() {
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
           <div>
             <div style={{fontSize:'96px',fontWeight:'900',color:'#f0f0f0',lineHeight:1,marginBottom:'-20px'}}>04</div>
-            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Aménagement</div>
-            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Lotissement</h2>
-            <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
-            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>SCI Victorine Immo réalise des opérations de lotissement conformes aux normes urbanistiques en vigueur. Nous prenons en charge l'ensemble du processus, de l'acquisition foncière à la viabilisation des lots.</p>
-            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Nos lotissements sont conçus pour offrir un cadre de vie agréable avec toutes les commodités nécessaires.</p>
-            <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
-              {["Études topographiques et urbanistiques","Viabilisation (eau, électricité, voirie)","Conformité aux normes d'urbanisme","Titres fonciers individuels pour chaque lot"].map((p,i)=>(
-                <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
-                  <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
-                  <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
-                </div>
-              ))}
-            </div>
-            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>En savoir plus</button>
-          </div>
-          <img src="/images/services/lotissement.jpg" alt="Lotissement" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
-        </div>
-      </section>
-
-      <hr style={{border:'none',borderTop:'1px solid #eee',margin:'0 4rem'}}/>
-
-      {/* SERVICE 5 */}
-      <section id="service-5" style={{padding:'5rem 4rem',background:'#fff'}}>
-        <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
-          <img src="/images/services/financement.jpg" alt="Financement" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
-          <div>
-            <div style={{fontSize:'96px',fontWeight:'900',color:'#f5f5f5',lineHeight:1,marginBottom:'-20px'}}>05</div>
             <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Accompagnement</div>
             <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Recherche de financement</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
@@ -183,6 +156,33 @@ export default function ServicesPage() {
             </div>
             <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Prendre RDV</button>
           </div>
+          <img src="/images/services/financement.jpg" alt="Financement" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
+        </div>
+      </section>
+
+      <hr style={{border:'none',borderTop:'1px solid #eee',margin:'0 4rem'}}/>
+
+      {/* SERVICE 5 */}
+      <section id="service-5" style={{padding:'5rem 4rem',background:'#fff'}}>
+        <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
+          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&q=80" alt="Fiscal" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
+          <div>
+            <div style={{fontSize:'96px',fontWeight:'900',color:'#f5f5f5',lineHeight:1,marginBottom:'-20px'}}>05</div>
+            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Fiscal</div>
+            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Encadrement fiscal</h2>
+            <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Notre service d'encadrement fiscal vous accompagne dans la gestion et l'optimisation fiscale de vos investissements immobiliers. Nous vous aidons à comprendre et respecter vos obligations fiscales.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>En partenariat avec des notaires et experts fiscaux, nous sécurisons chaque transaction pour vous offrir une tranquillité d'esprit totale.</p>
+            <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
+              {["Conseil en optimisation fiscale immobilière","Accompagnement dans les démarches administratives","Déclarations et obligations fiscales sécurisées","Partenariat avec experts fiscaux agréés"].map((p,i)=>(
+                <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
+                  <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
+                  <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
+                </div>
+              ))}
+            </div>
+            <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Nous contacter</button>
+          </div>
         </div>
       </section>
 
@@ -193,13 +193,13 @@ export default function ServicesPage() {
         <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
           <div>
             <div style={{fontSize:'96px',fontWeight:'900',color:'#f0f0f0',lineHeight:1,marginBottom:'-20px'}}>06</div>
-            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Juridique & Fiscal</div>
-            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Encadrement fiscal</h2>
+            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Juridique</div>
+            <h2 style={{fontSize:'34px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Conseil et veille juridique</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'20px'}}/>
-            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Notre service d'encadrement fiscal vous accompagne dans la gestion et l'optimisation fiscale de vos investissements immobiliers. Nous vous aidons à comprendre et respecter vos obligations fiscales.</p>
-            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>En partenariat avec des notaires et experts fiscaux, nous sécurisons chaque transaction pour vous offrir une tranquillité d'esprit totale.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Notre service de conseil juridique accompagne vos opérations immobilières à chaque étape, en assurant un suivi réglementaire rigoureux et une veille juridique constante.</p>
+            <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Nous anticipons les risques liés à vos transactions pour vous garantir des opérations parfaitement sécurisées sur le plan juridique.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
-              {["Conseil en optimisation fiscale immobilière","Accompagnement dans les démarches administratives","Sécurisation juridique des transactions","Partenariat avec notaires agréés"].map((p,i)=>(
+              {["Conseil juridique sur vos opérations immobilières","Veille réglementaire et anticipation des risques","Sécurisation juridique des transactions","Accompagnement par des juristes spécialisés"].map((p,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
                   <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
                   <span style={{fontSize:'18px',color:'#444'}}>{p}</span>
@@ -208,7 +208,7 @@ export default function ServicesPage() {
             </div>
             <button style={{background:'#c0392b',color:'#fff',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'12px 28px',cursor:'pointer'}}>Nous contacter</button>
           </div>
-          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=700&q=80" alt="Fiscal" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80" alt="Conseil juridique" style={{height:'340px',objectFit:'cover',width:'100%'}}/>
         </div>
       </section>
 
