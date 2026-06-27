@@ -15,24 +15,24 @@ export default function ContactPage() {
     <main>
 
       {/* HERO */}
-      <section style={{position:'relative',height:'360px',overflow:'hidden'}}>
+      <section style={{position:'relative',height:'clamp(280px, 60vh, 360px)',overflow:'hidden'}}>
         <div style={{position:'absolute',inset:0,backgroundImage:"url('/images/contact/hero.jpg')",backgroundSize:'cover',backgroundPosition:'center'}}/>
-        <div style={{position:'relative',zIndex:2,height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:'0 4rem'}}>
-          <div style={{fontSize:'12px',letterSpacing:'4px',textTransform:'uppercase',color:'#fff',marginBottom:'12px',textShadow:'0 1px 6px rgba(0,0,0,0.8)'}}>SCI Victorine Immo</div>
+        <div style={{position:'relative',zIndex:2,height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:'clamp(1rem, 5vw, 4rem)'}}>
+          <div style={{fontSize:'clamp(10px, 2vw, 12px)',letterSpacing:'4px',textTransform:'uppercase',color:'#fff',marginBottom:'12px',textShadow:'0 1px 6px rgba(0,0,0,0.8)'}}>SCI Victorine Immo</div>
           <div style={{width:'40px',height:'3px',background:'#c0392b',marginBottom:'16px'}}/>
-          <h1 style={{fontSize:'48px',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px',textShadow:'0 2px 12px rgba(0,0,0,0.8)'}}>Nous <span style={{color:'#e74c3c'}}>contacter</span></h1>
-          <p style={{fontSize:'17px',color:'#fff',maxWidth:'500px',lineHeight:'1.8',textShadow:'0 1px 6px rgba(0,0,0,0.9)'}}>Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner dans vos projets.</p>
+          <h1 style={{fontSize:'clamp(28px, 8vw, 48px)',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px',textShadow:'0 2px 12px rgba(0,0,0,0.8)'}}>Nous <span style={{color:'#e74c3c'}}>contacter</span></h1>
+          <p style={{fontSize:'clamp(15px, 3.5vw, 17px)',color:'#fff',maxWidth:'500px',lineHeight:'1.8',textShadow:'0 1px 6px rgba(0,0,0,0.9)'}}>Notre équipe est disponible pour répondre à toutes vos questions et vous accompagner dans vos projets.</p>
         </div>
       </section>
 
       {/* INFOS + FORMULAIRE */}
-      <section style={{padding:'5rem 4rem',background:'#fff'}}>
-        <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'0.8fr 1.2fr',gap:'5rem'}}>
+      <section style={{padding:'clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 4rem)',background:'#fff'}}>
+        <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(300px, 1fr))',gap:'clamp(2rem, 6vw, 5rem)'}}>
 
           {/* Infos contact */}
           <div>
             <div style={{fontSize:'12px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Coordonnées</div>
-            <h2 style={{fontSize:'28px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Parlons de votre projet</h2>
+            <h2 style={{fontSize:'clamp(20px, 5vw, 28px)',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Parlons de votre projet</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginBottom:'2rem'}}/>
 
             {/* Infos */}

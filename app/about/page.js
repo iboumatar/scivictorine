@@ -5,21 +5,21 @@ export default function AboutPage() {
     <main>
 
       {/* HERO */}
-      <section style={{position:'relative',height:'380px',overflow:'hidden'}}>
+      <section style={{position:'relative',height:'clamp(280px, 60vh, 380px)',overflow:'hidden'}}>
         <div style={{position:'absolute',inset:0,backgroundImage:"url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80')",backgroundSize:'cover',backgroundPosition:'center'}}/>
-        <div style={{position:'relative',zIndex:2,height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:'0 4rem'}}>
-          <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#fff',marginBottom:'12px',textShadow:'0 1px 6px rgba(0,0,0,0.8)'}}>SCI Victorine Immo</div>
+        <div style={{position:'relative',zIndex:2,height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:'clamp(1rem, 5vw, 4rem)'}}>
+          <div style={{fontSize:'clamp(12px, 3vw, 14px)',letterSpacing:'4px',textTransform:'uppercase',color:'#fff',marginBottom:'12px',textShadow:'0 1px 6px rgba(0,0,0,0.8)'}}>SCI Victorine Immo</div>
           <div style={{width:'40px',height:'3px',background:'#c0392b',marginBottom:'16px'}}/>
-          <h1 style={{fontSize:'58px',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px',textShadow:'0 2px 12px rgba(0,0,0,0.8)'}}>À propos<br/>de <span style={{color:'#e74c3c'}}>nous</span></h1>
-          <p style={{fontSize:'20px',color:'#fff',maxWidth:'500px',lineHeight:'1.8',textShadow:'0 1px 6px rgba(0,0,0,0.9)'}}>Un acteur de référence pour des opérations foncières encadrées et fiables au Sénégal.</p>
+          <h1 style={{fontSize:'clamp(28px, 8vw, 58px)',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px',textShadow:'0 2px 12px rgba(0,0,0,0.8)'}}>À propos<br/>de <span style={{color:'#e74c3c'}}>nous</span></h1>
+          <p style={{fontSize:'clamp(16px, 4vw, 20px)',color:'#fff',maxWidth:'500px',lineHeight:'1.8',textShadow:'0 1px 6px rgba(0,0,0,0.9)'}}>Un acteur de référence pour des opérations foncières encadrées et fiables au Sénégal.</p>
         </div>
       </section>
 
       {/* QUI SOMMES NOUS */}
-      <section style={{padding:'7rem 4rem',background:'#fff'}}>
-        <div style={{maxWidth:'1300px',margin:'0 auto',display:'grid',gridTemplateColumns:'0.8fr 1.2fr',gap:'5rem',alignItems:'center'}}>
+      <section style={{padding:'clamp(4rem, 10vw, 7rem) clamp(1rem, 5vw, 4rem)',background:'#fff'}}>
+        <div style={{maxWidth:'1300px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(300px, 1fr))',gap:'clamp(2rem, 6vw, 5rem)',alignItems:'center'}}>
           <div style={{position:'relative'}}>
-            <img src="/images/about/qui-sommes-nous.jpg" alt="équipe" style={{width:'100%',height:'460px',objectFit:'cover',display:'block'}}/>
+            <img src="/images/about/qui-sommes-nous.jpg" alt="équipe" style={{width:'100%',height:'clamp(250px, 50vw, 460px)',objectFit:'cover',display:'block'}}/>
             <div style={{position:'absolute',bottom:'-20px',right:0,background:'#c0392b',color:'#fff',padding:'1.6rem 2rem',textAlign:'center'}}>
               <div style={{fontSize:'40px',fontWeight:'900'}}>30+</div>
               <div style={{fontSize:'15px',letterSpacing:'2px',textTransform:'uppercase',opacity:0.8}}>Ans d'expérience</div>
@@ -27,9 +27,9 @@ export default function AboutPage() {
           </div>
           <div>
             <div style={{fontSize:'16px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'12px'}}>Notre histoire</div>
-            <h2 style={{fontSize:'48px',fontWeight:'900',color:'#1a1a1a',marginBottom:'20px'}}>Qui sommes-nous ?</h2>
+            <h2 style={{fontSize:'clamp(28px, 6vw, 48px)',fontWeight:'900',color:'#1a1a1a',marginBottom:'20px'}}>Qui sommes-nous ?</h2>
             <div style={{width:'48px',height:'3px',background:'#c0392b',marginBottom:'26px'}}/>
-            <p style={{fontSize:'22px',color:'#666',lineHeight:'2',marginBottom:'1.4rem'}}>La SCI Victorine Immo est née de l'initiative de deux cadres supérieurs expérimentés, issus respectivement du secteur privé et du secteur public.</p>
+            <p style={{fontSize:'clamp(15px, 3vw, 22px)',color:'#666',lineHeight:'2',marginBottom:'1.4rem'}}>La SCI Victorine Immo est née de l'initiative de deux cadres supérieurs expérimentés, issus respectivement du secteur privé et du secteur public.</p>
             <p style={{fontSize:'22px',color:'#666',lineHeight:'2',marginBottom:'1.8rem'}}>Forts de plus de 30 années d'expertise dans les domaines fonciers, ils ont uni leurs compétences pour créer une structure fiable, tournée vers la qualité, la rigueur et l'accompagnement sur mesure des projets immobiliers.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'16px'}}>
               {['Accompagnement personnalisé de A à Z','Projets livrés dans les délais','Service client réactif et disponible'].map((item,i)=>(
@@ -44,10 +44,10 @@ export default function AboutPage() {
       </section>
 
       {/* NOTRE APPROCHE */}
-      <section style={{padding:'5rem 4rem',background:'#fdf1f0',position:'relative',overflow:'hidden'}}>
+      <section style={{padding:'clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 4rem)',background:'#fdf1f0',position:'relative',overflow:'hidden'}}>
         <div style={{position:'absolute',inset:0,background:'#fdecea',clipPath:'polygon(0 0, 100% 0, 100% 45%, 0 70%)',zIndex:0}}/>
         <div style={{position:'absolute',inset:0,background:'#f5bbb5',clipPath:'polygon(0 0, 100% 0, 100% 5%, 0 18%)',zIndex:0}}/>
-        <div style={{position:'relative',zIndex:1,maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4rem',alignItems:'center'}}>
+        <div style={{position:'relative',zIndex:1,maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(300px, 1fr))',gap:'clamp(2rem, 5vw, 4rem)',alignItems:'center'}}>
           <div>
             <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'10px'}}>Notre méthode</div>
             <h2 style={{fontSize:'36px',fontWeight:'900',color:'#1a1a1a',marginBottom:'16px'}}>Notre Approche</h2>

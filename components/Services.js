@@ -87,7 +87,7 @@ export default function Services() {
         .services-section {
           position: relative;
           overflow: hidden;
-          padding: 6rem 2rem;
+          padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 2rem);
           background:
             radial-gradient(circle at top left, rgba(192, 57, 43, 0.22), transparent 35%),
             radial-gradient(circle at bottom right, rgba(142, 36, 26, 0.16), transparent 35%),
@@ -131,7 +131,7 @@ export default function Services() {
           z-index: 2;
           max-width: 1120px;
           margin: 0 auto;
-          padding: 4rem 2rem;
+          padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
 
           border-radius: 12px;
 
@@ -164,7 +164,7 @@ export default function Services() {
 
         .services-header h2 {
           margin: 0;
-          font-size: clamp(2.4rem, 4.8vw, 3.84rem);
+          font-size: clamp(2rem, 6vw, 3.84rem);
           color: #171717;
           font-weight: 900;
           letter-spacing: -1px;
@@ -174,13 +174,13 @@ export default function Services() {
           max-width: 620px;
           margin: 1rem auto 0;
           color: #6f3b35;
-          font-size: 20px;
+          font-size: clamp(14px, 3vw, 20px);
           line-height: 1.8;
         }
 
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           gap: 1.4rem;
         }
 
@@ -283,7 +283,7 @@ export default function Services() {
         .service-card h3 {
           margin: 0 0 0.9rem;
           color: #221211;
-          font-size: 19px;
+          font-size: clamp(16px, 3vw, 19px);
           font-weight: 900;
           letter-spacing: 0.5px;
           text-transform: uppercase;
@@ -293,7 +293,7 @@ export default function Services() {
         .service-card p {
           margin: 0;
           color: #76524e;
-          font-size: 18px;
+          font-size: clamp(15px, 2.5vw, 18px);
           line-height: 1.75;
           transition: color 0.35s ease;
         }

@@ -88,19 +88,19 @@ export default function ProjetsPage() {
     <main>
 
       {/* HERO */}
-      <section style={{position:'relative',height:'440px',overflow:'hidden'}}>
+      <section style={{position:'relative',height:'clamp(280px, 60vh, 440px)',overflow:'hidden'}}>
         <div style={{position:'absolute',inset:'-5%',backgroundImage:"url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1400&q=80')",backgroundSize:'110%',backgroundPosition:'center'}}/>
-        <div style={{position:'relative',zIndex:2,height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:'0 4rem'}}>
-          <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#fff',marginBottom:'12px',textShadow:'0 1px 6px rgba(0,0,0,0.8)'}}>SCI Victorine Immo</div>
+        <div style={{position:'relative',zIndex:2,height:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:'clamp(1rem, 5vw, 4rem)'}}>
+          <div style={{fontSize:'clamp(12px, 3vw, 14px)',letterSpacing:'4px',textTransform:'uppercase',color:'#fff',marginBottom:'12px',textShadow:'0 1px 6px rgba(0,0,0,0.8)'}}>SCI Victorine Immo</div>
           <div style={{width:'40px',height:'3px',background:'#c0392b',marginBottom:'16px'}}/>
-          <h1 style={{fontSize:'58px',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px',textShadow:'0 2px 12px rgba(0,0,0,0.8)'}}>Nos <span style={{color:'#e74c3c'}}>Réalisations</span></h1>
-          <p style={{fontSize:'20px',color:'#fff',maxWidth:'500px',lineHeight:'1.8',textShadow:'0 1px 6px rgba(0,0,0,0.9)'}}>Découvrez nos projets immobiliers de standing au Sénégal.</p>
+          <h1 style={{fontSize:'clamp(28px, 8vw, 58px)',fontWeight:'900',color:'#fff',lineHeight:'1.1',marginBottom:'12px',textShadow:'0 2px 12px rgba(0,0,0,0.8)'}}>Nos <span style={{color:'#e74c3c'}}>Réalisations</span></h1>
+          <p style={{fontSize:'clamp(16px, 4vw, 20px)',color:'#fff',maxWidth:'500px',lineHeight:'1.8',textShadow:'0 1px 6px rgba(0,0,0,0.9)'}}>Découvrez nos projets immobiliers de standing au Sénégal.</p>
         </div>
       </section>
 
       {/* SÉLECTEUR PROJETS */}
-      <section style={{padding:'2rem 4rem',background:'#fff',borderBottom:'1px solid #eee'}}>
-        <div style={{maxWidth:'1100px',margin:'0 auto',display:'flex',gap:'1rem',flexWrap:'wrap'}}>
+      <section style={{padding:'clamp(1rem, 3vw, 2rem) clamp(1rem, 5vw, 4rem)',background:'#fff',borderBottom:'1px solid #eee'}}>
+        <div style={{maxWidth:'1100px',margin:'0 auto',display:'flex',gap:'clamp(0.5rem, 2vw, 1rem)',flexWrap:'wrap'}}>
           {Object.entries(projets).map(([key, p]) => (
             <button key={key}
               onClick={() => {setActiveProject(key); setLightbox(null)}}
@@ -127,26 +127,26 @@ export default function ProjetsPage() {
       </section>
 
       {/* PROJET HEADER */}
-      <section style={{padding:'4rem 4rem 2rem',background:'#fff',maxWidth:'1100px',margin:'0 auto'}}>
+      <section style={{padding:'clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem)',background:'#fff',maxWidth:'1100px',margin:'0 auto'}}>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',flexWrap:'wrap',gap:'1rem'}}>
           <div>
-            <div style={{fontSize:'14px',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'8px'}}>{projet.year}</div>
-            <h2 style={{fontSize:'43px',fontWeight:'900',color:'#1a1a1a',marginBottom:'8px'}}>{projet.name}</h2>
+            <div style={{fontSize:'clamp(12px, 3vw, 14px)',letterSpacing:'4px',textTransform:'uppercase',color:'#c0392b',marginBottom:'8px'}}>{projet.year}</div>
+            <h2 style={{fontSize:'clamp(28px, 6vw, 43px)',fontWeight:'900',color:'#1a1a1a',marginBottom:'8px'}}>{projet.name}</h2>
             <div style={{width:'40px',height:'2px',background:'#c0392b',marginTop:'8px'}}/>
           </div>
-          <span style={{background:'#c0392b',color:'#fff',fontSize:'13px',letterSpacing:'3px',textTransform:'uppercase',padding:'8px 18px'}}>
+          <span style={{background:'#c0392b',color:'#fff',fontSize:'clamp(11px, 2vw, 13px)',letterSpacing:'3px',textTransform:'uppercase',padding:'clamp(6px, 1.5vw, 8px) clamp(12px, 3vw, 18px)'}}>
             {projet.status}
           </span>
         </div>
       </section>
 
       {/* GALERIE */}
-      <section style={{padding:'0 4rem 4rem',background:'#fff'}}>
+      <section style={{padding:'0 clamp(1rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem)',background:'#fff'}}>
         <div style={{maxWidth:'1100px',margin:'0 auto'}}>
 
           {/* Photo principale */}
           <div style={{position:'relative',overflow:'hidden',marginBottom:'4px',cursor:'pointer'}} onClick={()=>setLightbox(0)}>
-            <img src={photos[0]} alt={projet.name} style={{width:'100%',height:'500px',objectFit:'cover',display:'block',transition:'transform 0.4s'}}
+            <img src={photos[0]} alt={projet.name} style={{width:'100%',height:'clamp(250px, 60vw, 500px)',objectFit:'cover',display:'block',transition:'transform 0.4s'}}
               onMouseEnter={e=>e.currentTarget.style.transform='scale(1.02)'}
               onMouseLeave={e=>e.currentTarget.style.transform='scale(1)'}
             />
@@ -166,10 +166,10 @@ export default function ProjetsPage() {
           </div>
 
           {/* Miniatures */}
-          <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:'4px'}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(100px, 1fr))',gap:'4px'}}>
           {photos.slice(1, 5).map((p,i)=>(
               <div key={i} style={{position:'relative',overflow:'hidden',cursor:'pointer'}} onClick={()=>setLightbox(i+1)}>
-                <img src={p} alt={`photo ${i+2}`} style={{width:'100%',height:'130px',objectFit:'cover',display:'block',transition:'transform 0.3s'}}
+                <img src={p} alt={`photo ${i+2}`} style={{width:'100%',height:'clamp(80px, 20vw, 130px)',objectFit:'cover',display:'block',transition:'transform 0.3s'}}
                   onMouseEnter={e=>e.currentTarget.style.transform='scale(1.06)'}
                   onMouseLeave={e=>e.currentTarget.style.transform='scale(1)'}
                 />
@@ -186,9 +186,9 @@ export default function ProjetsPage() {
       </section>
 
       {/* INFOS PROJET */}
-      <section style={{padding:'2rem 4rem 5rem',background:'#fff'}}>
+      <section style={{padding:'clamp(1.5rem, 4vw, 2rem) clamp(1rem, 5vw, 4rem) clamp(3rem, 8vw, 5rem)',background:'#fff'}}>
         {activeProject === 'victorine' ? (
-          <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'1.3fr 0.7fr',gap:'4rem'}}>
+          <div style={{maxWidth:'1100px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))',gap:'clamp(2rem, 5vw, 4rem)'}}>
 
             {/* Description */}
             <div>
@@ -301,9 +301,9 @@ export default function ProjetsPage() {
       </section>
 
       {/* CTA */}
-      <section style={{background:'#c0392b',padding:'4rem',textAlign:'center'}}>
-        <h2 style={{fontSize:'34px',fontWeight:'900',color:'#fff',marginBottom:'12px'}}>Intéressé par {projet.name} ?</h2>
-        <p style={{fontSize:'19px',color:'rgba(255,255,255,0.75)',marginBottom:'2rem'}}>Contactez-nous dès maintenant pour plus d'informations ou pour planifier une visite.</p>
+      <section style={{background:'#c0392b',padding:'clamp(2rem, 6vw, 4rem)',textAlign:'center'}}>
+        <h2 style={{fontSize:'clamp(24px, 6vw, 34px)',fontWeight:'900',color:'#fff',marginBottom:'12px'}}>Intéressé par {projet.name} ?</h2>
+        <p style={{fontSize:'clamp(16px, 3.5vw, 19px)',color:'rgba(255,255,255,0.75)',marginBottom:'2rem'}}>Contactez-nous dès maintenant pour plus d'informations ou pour planifier une visite.</p>
         <button style={{background:'#fff',color:'#c0392b',border:'none',fontSize:'15px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',padding:'14px 32px',cursor:'pointer',margin:'0 8px'}}>
           Prendre rendez-vous
         </button>
