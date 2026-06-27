@@ -39,7 +39,6 @@ export default function Navbar() {
         }
 
         .navbar-hamburger {
-          display: none;
           background: transparent;
           border: none;
           font-size: 28px;
@@ -61,24 +60,30 @@ export default function Navbar() {
 
           .navbar-contact-desktop {
             display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden !important;
           }
 
           .navbar-hamburger {
-            display: block !important;
+            display: block;
+            margin-left: auto;
           }
         }
 
         @media (min-width: 1024px) {
           .navbar-desktop {
-            display: flex !important;
+            display: flex;
           }
 
           .navbar-contact-desktop {
-            display: block !important;
+            display: block;
+            visibility: visible;
           }
 
           .navbar-hamburger {
-            display: none !important;
+            display: none;
           }
         }
       `}</style>
