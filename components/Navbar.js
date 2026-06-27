@@ -1,11 +1,19 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 export default function Navbar() {
   const [hovered, setHovered] = useState(null)
   const [hovContact, setHovContact] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const linkStyle = (id) => ({
     color: hovered === id ? '#c0392b' : '#666',
@@ -109,52 +117,58 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Liens navigation - Desktop */}
-        <ul className="navbar-desktop">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <Link
-                href={item.href}
-                style={linkStyle(item.id)}
-                onMouseEnter={() => setHovered(item.id)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* Liens navigation - Desktop only */}
+        {!isMobile && (
+          <ul className="navbar-desktop">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <Link
+                  href={item.href}
+                  style={linkStyle(item.id)}
+                  onMouseEnter={() => setHovered(item.id)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
 
-        {/* Bouton Nous contacter - Desktop */}
-        <Link href="/contact" className="navbar-contact-desktop">
+        {/* Bouton Nous contacter - Desktop only */}
+        {!isMobile && (
+          <Link href="/contact" className="navbar-contact-desktop">
+            <button
+              onMouseEnter={() => setHovContact(true)}
+              onMouseLeave={() => setHovContact(false)}
+              style={{
+                background: hovContact ? '#fff' : '#c0392b',
+                color: hovContact ? '#c0392b' : '#fff',
+                border: '2px solid #c0392b',
+                padding: '10px 22px',
+                fontSize:'14px',
+                fontWeight: '700',
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                transition: 'all 0.25s ease',
+                transform: hovContact ? 'translateY(-2px)' : 'translateY(0)',
+                boxShadow: hovContact ? '0 6px 20px rgba(192,57,43,0.25)' : 'none',
+              }}>
+              Nous contacter
+            </button>
+          </Link>
+        )}
+
+        {/* Menu hamburger - Mobile only */}
+        {isMobile && (
           <button
-            onMouseEnter={() => setHovContact(true)}
-            onMouseLeave={() => setHovContact(false)}
-            style={{
-              background: hovContact ? '#fff' : '#c0392b',
-              color: hovContact ? '#c0392b' : '#fff',
-              border: '2px solid #c0392b',
-              padding: '10px 22px',
-              fontSize:'14px',
-              fontWeight: '700',
-              letterSpacing: '2px',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'all 0.25s ease',
-              transform: hovContact ? 'translateY(-2px)' : 'translateY(0)',
-              boxShadow: hovContact ? '0 6px 20px rgba(192,57,43,0.25)' : 'none',
-            }}>
-            Nous contacter
+            className="navbar-hamburger"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
           </button>
-        </Link>
-
-        {/* Menu hamburger - Mobile */}
-        <button
-          className="navbar-hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
+        )}
 
         {/* Menu mobile */}
         {menuOpen && (
