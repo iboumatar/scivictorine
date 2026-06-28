@@ -338,7 +338,7 @@ export default function ProjetsPage() {
             style={{width:'80vw',maxWidth:'900px',aspectRatio:'16/9'}}
             onClick={e=>e.stopPropagation()}
           >
-            <source src="/videos/residence-victorine.mp4" type="video/mp4" />
+            <source src="https://vv4qsvjulfpdcvvb.public.blob.vercel-storage.com/0628.mp4" type="video/mp4" />
           </video>
           <button onClick={()=>setShowVideo(false)}
             style={{position:'absolute',top:'1.5rem',right:'1.5rem',background:'transparent',border:'none',color:'#fff',fontSize:'34px',cursor:'pointer'}}>✕</button>

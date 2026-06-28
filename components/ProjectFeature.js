@@ -201,7 +201,7 @@ export default function ProjectFeature() {
             autoPlay
             onClick={e => e.stopPropagation()}
           >
-            <source src="/videos/residence-victorine.mp4" type="video/mp4" />
+            <source src="https://vv4qsvjulfpdcvvb.public.blob.vercel-storage.com/0628.mp4" type="video/mp4" />
           </video>
 
           <button className="close" onClick={() => setShowVideo(false)}>
