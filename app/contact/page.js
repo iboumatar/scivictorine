@@ -4,11 +4,29 @@ import { useState } from 'react'
 export default function ContactPage() {
   const [form, setForm] = useState({ nom: '', email: '', telephone: '', sujet: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
   const whatsappLink = `https://wa.me/+33612345678?text=${encodeURIComponent("Bonjour, je souhaite vous contacter.")}`
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
+    setSending(true)
+    setError(false)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+
+      if (!res.ok) throw new Error()
+      setSent(true)
+    } catch {
+      setError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -148,11 +166,17 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button type="submit"
-                  style={{background:'#c0392b',color:'#fff',border:'none',padding:'16px',fontSize:'14px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',cursor:'pointer',transition:'opacity 0.2s'}}
-                  onMouseEnter={e=>e.currentTarget.style.opacity='0.9'}
-                  onMouseLeave={e=>e.currentTarget.style.opacity='1'}>
-                  Envoyer le message →
+                {error && (
+                  <div style={{background:'#fef2f2',border:'1px solid #fca5a5',color:'#991b1b',padding:'12px 16px',fontSize:'14px'}}>
+                    Une erreur est survenue. Veuillez réessayer ou nous contacter via WhatsApp.
+                  </div>
+                )}
+
+                <button type="submit" disabled={sending}
+                  style={{background:'#c0392b',color:'#fff',border:'none',padding:'16px',fontSize:'14px',fontWeight:'700',letterSpacing:'2px',textTransform:'uppercase',cursor:sending?'not-allowed':'pointer',opacity:sending?0.7:1,transition:'opacity 0.2s'}}
+                  onMouseEnter={e=>!sending && (e.currentTarget.style.opacity='0.9')}
+                  onMouseLeave={e=>!sending && (e.currentTarget.style.opacity='1')}>
+                  {sending ? 'Envoi en cours...' : 'Envoyer le message →'}
                 </button>
               </form>
             )}
