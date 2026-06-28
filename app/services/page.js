@@ -95,7 +95,7 @@ export default function ServicesPage() {
             <p style={{fontSize:'clamp(15px, 3vw, 19px)',color:'#666',lineHeight:'2',marginBottom:'1.2rem'}}>Nous proposons une large gamme d'appartements modernes et fonctionnels dans les quartiers les plus prisés de Dakar et des principales villes du Sénégal.</p>
             <p style={{fontSize:'19px',color:'#666',lineHeight:'2',marginBottom:'1.5rem'}}>Chaque appartement est conçu pour offrir confort, qualité et praticité, avec des prestations adaptées à tous les profils et budgets.</p>
             <div style={{display:'flex',flexDirection:'column',gap:'10px',marginBottom:'2rem'}}>
-              {['Studios, F2, F3, F4 et duplex disponibles','Finitions premium et matériaux de qualité','Localisation dans des quartiers stratégiques','Accompagnement pour le financement bancaire'].map((p,i)=>(
+              {['Finitions premium et matériaux de qualité','Localisation dans des quartiers stratégiques','Accompagnement pour le financement bancaire'].map((p,i)=>(
                 <div key={i} style={{display:'flex',alignItems:'center',gap:'10px'}}>
                   <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c0392b',flexShrink:0}}/>
                   <span style={{fontSize:'clamp(15px, 2.5vw, 18px)',color:'#444'}}>{p}</span>
